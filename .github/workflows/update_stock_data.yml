@@ -1,0 +1,36 @@
+name: 更新股票數據
+
+on:
+  schedule:
+    - cron: '0 21 * * 1-5'  # 每個工作日台灣時間晚上 9 點執行
+  workflow_dispatch:  # 允許手動觸發
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    
+    - name: 設定 Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: 安裝相依套件
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas yfinance requests beautifulsoup4
+        
+    - name: 更新股票數據
+      run: python update_data.py
+        
+    - name: 提交更新
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add stock_data/
+        git commit -m "自動更新股票數據 $(date '+%Y-%m-%d')" || echo "沒有需要更新的數據"
+        git push 
