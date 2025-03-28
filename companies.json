@@ -1,984 +1,1750 @@
 {
-    "AAPL": {
-      "name": "Apple Inc.",
-      "chinese_name": "蘋果公司",
-      "icon": "https://logo.clearbit.com/apple.com",
-      "description": "全球最大的科技公司之一，主要產品包括 iPhone、iPad、Mac 等。公司專注於設計、開發和銷售消費電子產品、軟件和服務。",
-      "sector": "科技",
-      "industry": "消費電子",
-      "founded": "1976年4月1日",
-      "ipo_date": "1980-12-12",
-      "headquarters": "加利福尼亞州庫比蒂諾",
-      "ceo": "Tim Cook",
-      "employees": "164,000+",
-      "key_products": [
-        "iPhone",
-        "iPad",
-        "Mac",
-        "Apple Watch",
-        "AirPods"
-      ],
-      "key_services": [
-        "App Store",
-        "Apple Music",
-        "iCloud",
-        "Apple TV+"
-      ]
-    },
-    "MSFT": {
-      "name": "Microsoft Corporation",
-      "chinese_name": "微軟",
-      "icon": "https://logo.clearbit.com/microsoft.com",
-      "description": "全球最大的軟件公司之一，提供個人電腦操作系統、辦公軟件、雲計算服務等。近年來在人工智能和雲計算領域有重大突破。",
-      "sector": "科技",
-      "industry": "軟件",
-      "founded": "1975年4月4日",
-      "ipo_date": "1986-03-13",
-      "headquarters": "華盛頓州雷德蒙德",
-      "ceo": "Satya Nadella",
-      "employees": "221,000+",
-      "key_products": [
-        "Windows",
-        "Office 365",
-        "Xbox"
-      ],
-      "key_services": [
-        "Azure",
-        "LinkedIn",
-        "GitHub"
-      ]
-    },
-    "GOOGL": {
-      "name": "Alphabet Inc. (Google)",
-      "chinese_name": "谷歌",
-      "icon": "https://logo.clearbit.com/google.com",
-      "description": "全球最大的搜索引擎和網絡廣告公司，同時在人工智能、自動駕駛等領域有重要布局。旗下擁有 YouTube、Android 等重要產品。",
-      "sector": "科技",
-      "industry": "互聯網服務",
-      "founded": "1998年9月4日",
-      "ipo_date": "2004-08-19",
-      "headquarters": "加利福尼亞州山景城",
-      "ceo": "Sundar Pichai",
-      "employees": "156,000+",
-      "key_products": [
-        "Google Search",
-        "Android",
-        "Chrome"
-      ],
-      "key_services": [
-        "Google Cloud",
-        "YouTube",
-        "Google Maps"
-      ]
-    },
-    "AMZN": {
-      "name": "Amazon.com Inc.",
-      "chinese_name": "亞馬遜",
-      "icon": "https://logo.clearbit.com/amazon.com",
-      "description": "全球最大的電子商務公司，同時也是雲計算服務的領導者。公司不斷擴展業務範圍，包括人工智能、數字娛樂等領域。",
-      "sector": "消費者服務",
-      "industry": "電子商務",
-      "founded": "1994年7月5日",
-      "ipo_date": "1997-05-15",
-      "headquarters": "華盛頓州西雅圖",
-      "ceo": "Andy Jassy",
-      "employees": "1,600,000+",
-      "key_products": [
-        "Amazon Prime",
-        "Kindle",
-        "Echo"
-      ],
-      "key_services": [
-        "AWS",
-        "Prime Video",
-        "Amazon Music"
-      ]
-    },
-    "META": {
-      "name": "Meta Platforms Inc.",
-      "chinese_name": "元宇宙平台",
-      "icon": "https://logo.clearbit.com/meta.com",
-      "description": "全球最大的社交媒體公司，擁有 Facebook、Instagram、WhatsApp 等平台。正積極投資元宇宙技術，致力於打造下一代互聯網平台。",
-      "sector": "科技",
-      "industry": "社交媒體",
-      "founded": "2004年2月4日",
-      "ipo_date": "2012-05-18",
-      "headquarters": "加利福尼亞州門洛帕克",
-      "ceo": "Mark Zuckerberg",
-      "employees": "86,000+",
-      "key_products": [
-        "Facebook",
-        "Instagram",
-        "WhatsApp"
-      ],
-      "key_services": [
-        "Meta Quest",
-        "Facebook Messenger",
-        "Workplace"
-      ]
-    },
-    "NVDA": {
-      "name": "NVIDIA Corporation",
-      "chinese_name": "輝達",
-      "icon": "https://logo.clearbit.com/nvidia.com",
-      "description": "全球領先的圖形處理器（GPU）製造商，在人工智能、數據中心、遊戲和自動駕駛等領域具有重要地位。",
-      "sector": "科技",
-      "industry": "半導體",
-      "founded": "1993年4月5日",
-      "ipo_date": "1999-01-22",
-      "headquarters": "加利福尼亞州聖克拉拉",
-      "ceo": "Jensen Huang",
-      "employees": "22,000+",
-      "key_products": [
-        "GeForce",
-        "CUDA",
-        "NVIDIA RTX"
-      ],
-      "key_services": [
-        "NVIDIA AI",
-        "NVIDIA Drive",
-        "GeForce NOW"
-      ]
-    },
-    "TSLA": {
-      "name": "Tesla Inc.",
-      "chinese_name": "特斯拉",
-      "icon": "https://logo.clearbit.com/tesla.com",
-      "description": "全球最有價值的汽車公司，專注於電動車、可再生能源和自動駕駛技術的開發。引領全球向可持續交通方式轉型。",
-      "sector": "汽車",
-      "industry": "電動車",
-      "founded": "2003年7月1日",
-      "ipo_date": "2010-06-29",
-      "headquarters": "德克薩斯州奧斯汀",
-      "ceo": "Elon Musk",
-      "employees": "127,000+",
-      "key_products": [
-        "Model S",
-        "Model 3",
-        "Model X",
-        "Model Y"
-      ],
-      "key_services": [
-        "Autopilot",
-        "Tesla Energy",
-        "Supercharger Network"
-      ]
-    },
-    "JPM": {
-      "name": "JPMorgan Chase & Co.",
-      "chinese_name": "摩根大通",
-      "icon": "https://logo.clearbit.com/jpmorganchase.com",
-      "description": "全球最大的銀行之一，提供投資銀行、商業銀行、資產管理等全方位金融服務。在金融科技領域持續創新。",
-      "sector": "金融",
-      "industry": "銀行",
-      "founded": "1799年12月1日",
-      "ipo_date": "1969-03-18",
-      "headquarters": "紐約市",
-      "ceo": "Jamie Dimon",
-      "employees": "256,000+",
-      "key_products": [
-        "Chase Banking",
-        "Credit Cards"
-      ],
-      "key_services": [
-        "Investment Banking",
-        "Asset Management",
-        "Treasury Services"
-      ]
-    },
-    "V": {
-      "name": "Visa Inc.",
-      "chinese_name": "維薩",
-      "icon": "https://logo.clearbit.com/visa.com",
-      "description": "全球最大的支付技術公司之一，提供電子支付解決方案。持續創新支付技術，推動無現金社會發展。",
-      "sector": "金融",
-      "industry": "支付服務",
-      "founded": "1958年9月18日",
-      "ipo_date": "2008-03-19",
-      "headquarters": "加利福尼亞州福斯特城",
-      "ceo": "Ryan McInerney",
-      "employees": "26,500+",
-      "key_products": [
-        "Visa Credit",
-        "Visa Debit"
-      ],
-      "key_services": [
-        "VisaNet",
-        "Visa Direct",
-        "Visa Token Service"
-      ]
-    },
-    "WMT": {
-      "name": "Walmart Inc.",
-      "chinese_name": "沃爾瑪",
-      "icon": "https://logo.clearbit.com/walmart.com",
-      "description": "全球最大的零售商，經營超市、會員制倉儲店等。近年來大力發展電子商務，與亞馬遜展開競爭。",
-      "sector": "消費者服務",
-      "industry": "零售",
-      "founded": "1962年7月2日",
-      "ipo_date": "1970-08-25",
-      "headquarters": "阿肯色州本頓維爾",
-      "ceo": "Doug McMillon",
-      "employees": "2,300,000+",
-      "key_products": [
-        "Walmart Supercenter",
-        "Sam's Club"
-      ],
-      "key_services": [
-        "Walmart+",
-        "Walmart eCommerce",
-        "Walmart Pay"
-      ]
-    },
-    "PG": {
-      "name": "The Procter & Gamble Company",
-      "chinese_name": "寶潔",
-      "icon": "https://logo.clearbit.com/pg.com",
-      "description": "全球最大的消費品公司，提供個人護理、家庭護理和美容產品。",
-      "sector": "消費品",
-      "industry": "日用品",
-      "founded": "1837年10月31日",
-      "ipo_date": "1929-01-02",
-      "headquarters": "俄亥俄州辛辛那提",
-      "ceo": "Jon Moeller",
-      "employees": "97,000+",
-      "key_products": [
-        "Pampers",
-        "Tide",
-        "Gillette"
-      ],
-      "key_services": [
-        "Consumer Goods",
-        "Personal Care",
-        "Home Care"
-      ]
-    },
-    "JNJ": {
-      "name": "Johnson & Johnson",
-      "chinese_name": "強生",
-      "icon": "https://logo.clearbit.com/jnj.com",
-      "description": "全球最大的醫療保健公司，提供醫療設備、藥品和消費保健產品。",
-      "sector": "醫療保健",
-      "industry": "醫療設備",
-      "founded": "1886年1月1日",
-      "ipo_date": "1944-09-24",
-      "headquarters": "新澤西州新布朗斯維克",
-      "ceo": "Joaquin Duato",
-      "employees": "152,000+",
-      "key_products": [
-        "Band-Aid",
-        "Tylenol",
-        "Neutrogena"
-      ],
-      "key_services": [
-        "Medical Devices",
-        "Pharmaceuticals",
-        "Consumer Healthcare"
-      ]
-    },
-    "KO": {
-      "name": "The Coca-Cola Company",
-      "chinese_name": "可口可樂",
-      "icon": "https://logo.clearbit.com/coca-cola.com",
-      "description": "全球最大的飲料公司，提供碳酸飲料、果汁和茶飲料。",
-      "sector": "消費品",
-      "industry": "飲料",
-      "founded": "1886年5月8日",
-      "ipo_date": "1919-09-05",
-      "headquarters": "喬治亞州亞特蘭大",
-      "ceo": "James Quincey",
-      "employees": "79,000+",
-      "key_products": [
-        "Coca-Cola",
-        "Sprite",
-        "Fanta"
-      ],
-      "key_services": [
-        "Beverages",
-        "Bottling",
-        "Distribution"
-      ]
-    },
-    "PFE": {
-      "name": "Pfizer Inc.",
-      "chinese_name": "輝瑞",
-      "icon": "https://logo.clearbit.com/pfizer.com",
-      "description": "全球領先的製藥公司，專注於研發和生產處方藥和疫苗。",
-      "sector": "醫療保健",
-      "industry": "製藥",
-      "founded": "1849年",
-      "ipo_date": "1942-06-22",
-      "headquarters": "紐約市",
-      "ceo": "Albert Bourla",
-      "employees": "79,000+",
-      "key_products": [
-        "Lipitor",
-        "Viagra",
-        "COVID-19 Vaccine"
-      ],
-      "key_services": [
-        "Pharmaceuticals",
-        "Vaccines",
-        "Research"
-      ]
-    },
-    "HD": {
-      "name": "The Home Depot, Inc.",
-      "chinese_name": "家得寶",
-      "icon": "https://logo.clearbit.com/homedepot.com",
-      "description": "全球最大的家居建材零售商，提供建築材料和家居裝修服務。",
-      "sector": "零售",
-      "industry": "家居建材",
-      "founded": "1978年",
-      "ipo_date": "1981-09-22",
-      "headquarters": "喬治亞州亞特蘭大",
-      "ceo": "Ted Decker",
-      "employees": "500,000+",
-      "key_products": [
-        "Building Materials",
-        "Home Improvement"
-      ],
-      "key_services": [
-        "Installation Services",
-        "Tool Rental",
-        "Pro Services"
-      ]
-    },
-    "DIS": {
-      "name": "The Walt Disney Company",
-      "chinese_name": "迪士尼",
-      "icon": "https://logo.clearbit.com/disney.com",
-      "description": "全球最大的娛樂公司，提供電影、電視、主題樂園和串流媒體服務。",
-      "sector": "通訊服務",
-      "industry": "娛樂",
-      "founded": "1923年10月16日",
-      "ipo_date": "1957-11-12",
-      "headquarters": "加利福尼亞州伯班克",
-      "ceo": "Bob Iger",
-      "employees": "220,000+",
-      "key_products": [
-        "Disney+",
-        "Theme Parks"
-      ],
-      "key_services": [
-        "Entertainment",
-        "Media",
-        "Streaming"
-      ]
-    },
-    "NFLX": {
-      "name": "Netflix, Inc.",
-      "chinese_name": "Netflix",
-      "icon": "https://logo.clearbit.com/netflix.com",
-      "description": "全球領先的串流媒體服務提供商，提供原創節目和電影。",
-      "sector": "通訊服務",
-      "industry": "串流媒體",
-      "founded": "1997年8月29日",
-      "ipo_date": "2002-05-23",
-      "headquarters": "加利福尼亞州洛斯加托斯",
-      "ceo": "Ted Sarandos",
-      "employees": "12,800+",
-      "key_products": [
-        "Streaming Service"
-      ],
-      "key_services": [
-        "Content Production",
-        "Streaming",
-        "DVD Rental"
-      ]
-    },
-    "INTC": {
-      "name": "Intel Corporation",
-      "chinese_name": "英特爾",
-      "icon": "https://logo.clearbit.com/intel.com",
-      "description": "全球最大的半導體公司，專注於處理器和晶片製造。",
-      "sector": "科技",
-      "industry": "半導體",
-      "founded": "1968年7月18日",
-      "ipo_date": "1971-10-13",
-      "headquarters": "加利福尼亞州聖克拉拉",
-      "ceo": "Pat Gelsinger",
-      "employees": "131,900+",
-      "key_products": [
-        "Intel Core",
-        "Intel Xeon"
-      ],
-      "key_services": [
-        "Semiconductor Manufacturing",
-        "Research"
-      ]
-    },
-    "CSCO": {
-      "name": "Cisco Systems, Inc.",
-      "chinese_name": "思科",
-      "icon": "https://logo.clearbit.com/cisco.com",
-      "description": "全球領先的網路設備和解決方案提供商，專注於企業網路和資安。",
-      "sector": "科技",
-      "industry": "網路設備",
-      "founded": "1984年12月10日",
-      "ipo_date": "1990-02-16",
-      "headquarters": "加利福尼亞州聖荷西",
-      "ceo": "Chuck Robbins",
-      "employees": "83,300+",
-      "key_products": [
-        "Networking Hardware",
-        "Security"
-      ],
-      "key_services": [
-        "Network Solutions",
-        "Cybersecurity",
-        "Cloud Services"
-      ]
-    },
-    "PEP": {
-      "name": "PepsiCo, Inc.",
-      "chinese_name": "百事公司",
-      "icon": "https://logo.clearbit.com/pepsico.com",
-      "description": "全球最大的食品和飲料公司之一，提供碳酸飲料、零食和食品。",
-      "sector": "消費品",
-      "industry": "食品和飲料",
-      "founded": "1965年",
-      "ipo_date": "1919-12-24",
-      "headquarters": "紐約州珀切斯",
-      "ceo": "Ramon Laguarta",
-      "employees": "309,000+",
-      "key_products": [
-        "Pepsi",
-        "Lay's",
-        "Gatorade"
-      ],
-      "key_services": [
-        "Beverages",
-        "Snacks",
-        "Food"
-      ]
-    },
-    "UNH": {
-      "name": "UnitedHealth Group Incorporated",
-      "chinese_name": "聯合健康保險",
-      "icon": "https://logo.clearbit.com/unitedhealthgroup.com",
-      "description": "全球最大的醫療保險公司，提供醫療保健服務和保險。",
-      "sector": "醫療保健",
-      "industry": "健康保險",
-      "founded": "1977年",
-      "ipo_date": "1984-10-04",
-      "headquarters": "明尼蘇達州明尼頓卡",
-      "ceo": "Andrew Witty",
-      "employees": "400,000+",
-      "key_products": [
-        "Health Insurance",
-        "Pharmacy Benefits"
-      ],
-      "key_services": [
-        "Healthcare Services",
-        "Information and Technology-Enabled Services"
-      ]
-    },
-    "XOM": {
-      "name": "Exxon Mobil Corporation",
-      "chinese_name": "埃克森美孚",
-      "icon": "https://logo.clearbit.com/exxonmobil.com",
-      "description": "全球最大的石油和天然氣公司之一，從事石油和天然氣的勘探、生產、煉油和銷售。",
-      "sector": "能源",
-      "industry": "石油和天然氣",
-      "founded": "1870年",
-      "ipo_date": "1918-04-30",
-      "headquarters": "德克薩斯州歐文",
-      "ceo": "Darren W. Woods",
-      "employees": "63,000+",
-      "key_products": ["Crude Oil", "Natural Gas", "Petroleum Products"],
-      "key_services": ["Exploration", "Production", "Refining", "Marketing"]
-    },
-    "MA": {
-      "name": "Mastercard Incorporated",
-      "chinese_name": "萬事達卡",
-      "icon": "https://logo.clearbit.com/mastercard.com",
-      "description": "全球領先的支付科技公司，連接全球消費者、金融機構、商家和政府。",
-      "sector": "金融",
-      "industry": "支付服務",
-      "founded": "1966年",
-      "ipo_date": "2006-05-25",
-      "headquarters": "紐約州珀切斯",
-      "ceo": "Michael Miebach",
-      "employees": "24,000+",
-      "key_products": ["Credit Cards", "Debit Cards"],
-      "key_services": ["Payment Processing", "Cyber and Intelligence Solutions"]
-    },
-    "CRM": {
-      "name": "Salesforce Inc.",
-      "chinese_name": "賽富時",
-      "icon": "https://logo.clearbit.com/salesforce.com",
-      "description": "全球領先的客戶關係管理 (CRM) 軟件供應商，提供雲端服務。",
-      "sector": "科技",
-      "industry": "軟件",
-      "founded": "1999年",
-      "ipo_date": "2004-06-23",
-      "headquarters": "加利福尼亞州舊金山",
-      "ceo": "Marc Benioff",
-      "employees": "73,500+",
-      "key_products": ["Sales Cloud", "Service Cloud", "Marketing Cloud"],
-      "key_services": ["Customer Relationship Management", "Cloud Computing"]
-    },
-    "PYPL": {
-      "name": "PayPal Holdings Inc.",
-      "chinese_name": "貝寶",
-      "icon": "https://logo.clearbit.com/paypal.com",
-      "description": "全球領先的在線支付系統，為全球數百萬用戶提供安全便捷的支付服務。",
-      "sector": "金融",
-      "industry": "支付服務",
-      "founded": "1998年12月",
-      "ipo_date": "2002-02-15",
-      "headquarters": "加利福尼亞州聖荷西",
-      "ceo": "Alex Chriss",
-      "employees": "30,900+",
-      "key_products": ["PayPal", "Venmo"],
-      "key_services": ["Online Payment Processing", "Mobile Payments"]
-    },
-    "ABBV": {
-      "name": "AbbVie Inc.",
-      "chinese_name": "艾伯維",
-      "icon": "https://logo.clearbit.com/abbvie.com",
-      "description": "一家全球性的生物製藥公司，專注於研發和商業化創新型藥物。",
-      "sector": "醫療保健",
-      "industry": "製藥",
-      "founded": "2013年1月1日",
-      "ipo_date": "2013-01-02",
-      "headquarters": "伊利諾伊州北芝加哥",
-      "ceo": "Richard A. Gonzalez",
-      "employees": "50,000+",
-      "key_products": ["Humira", "Imbruvica", "Skyrizi"],
-      "key_services": ["Pharmaceuticals", "Biotechnology", "Research"]
-    },
-    "NKE": {
-      "name": "Nike, Inc.",
-      "chinese_name": "耐吉",
-      "icon": "https://logo.clearbit.com/nike.com",
-      "description": "全球領先的運動服裝和鞋類製造商，為全球運動員提供創新產品和體驗。",
-      "sector": "消費者服務",
-      "industry": "服裝",
-      "founded": "1964年1月25日",
-      "ipo_date": "1980-12-02",
-      "headquarters": "俄勒岡州比弗頓",
-      "ceo": "John Donahoe",
-      "employees": "79,100+",
-      "key_products": ["Shoes", "Apparel", "Equipment"],
-      "key_services": ["Retail", "Wholesale", "eCommerce"]
-    },
-    "LLY": {
-      "name": "Eli Lilly and Company",
-      "chinese_name": "禮來公司",
-      "icon": "https://logo.clearbit.com/lilly.com",
-      "description": "一家全球領先的製藥公司，致力於發現和開發改變人類健康狀況的藥物。",
-      "sector": "醫療保健",
-      "industry": "製藥",
-      "founded": "1876年5月10日",
-      "ipo_date": "1927-06-11",
-      "headquarters": "印第安納州印第安納波利斯",
-      "ceo": "David A. Ricks",
-      "employees": "43,000+",
-      "key_products": ["Trulicity", "Mounjaro", "Olumiant"],
-      "key_services": ["Pharmaceuticals", "Research", "Biotechnology"]
-    },
-    "MRK": {
-      "name": "Merck & Co., Inc.",
-      "chinese_name": "默克公司",
-      "icon": "https://logo.clearbit.com/merck.com",
-      "description": "全球領先的製藥公司之一，研發並生產多種藥品和疫苗。",
-      "sector": "醫療保健",
-      "industry": "製藥",
-      "founded": "1891年",
-      "ipo_date": "1970-06-01",
-      "headquarters": "紐澤西州肯尼沃斯",
-      "ceo": "Robert M. Davis",
-      "employees": "69,000+",
-      "key_products": ["Keytruda", "Gardasil", "Januvia"],
-      "key_services": ["Pharmaceuticals", "Vaccines", "Animal Health"]
-    },
-    "MCD": {
-      "name": "McDonald's Corporation",
-      "chinese_name": "麥當勞",
-      "icon": "https://logo.clearbit.com/mcdonalds.com",
-      "description": "全球最大的連鎖快餐店之一，以漢堡和薯條聞名。",
-      "sector": "消費者服務",
-      "industry": "餐飲",
-      "founded": "1955年4月15日",
-      "ipo_date": "1965-04-21",
-      "headquarters": "伊利諾伊州芝加哥",
-      "ceo": "Chris Kempczinski",
-      "employees": "200,000+",
-      "key_products": ["Big Mac", "Fries", "McNuggets"],
-      "key_services": ["Restaurants", "Franchising", "Delivery"]
-    },
-    "T": {
-      "name": "AT&T Inc.",
-      "chinese_name": "美國電話電報公司",
-      "icon": "https://logo.clearbit.com/att.com",
-      "description": "全球領先的電信公司，提供無線通信、互聯網和電視服務。",
-      "sector": "通訊服務",
-      "industry": "電信",
-      "founded": "1885年",
-      "ipo_date": "1984-01-01",
-      "headquarters": "德克薩斯州達拉斯",
-      "ceo": "John T. Stankey",
-      "employees": "150,000+",
-      "key_products": ["Wireless Services", "Internet Services", "Television"],
-      "key_services": ["Telecommunications", "Media", "Technology"]
-    },
-    "VZ": {
-      "name": "Verizon Communications Inc.",
-      "chinese_name": "威訊通訊",
-      "icon": "https://logo.clearbit.com/verizon.com",
-      "description": "全球最大的電信公司之一，提供無線通訊、互聯網和電視服務。",
-      "sector": "通訊服務",
-      "industry": "電信",
-      "founded": "2000年",
-      "ipo_date": "2000-07-03",
-      "headquarters": "紐澤西州巴斯金嶺",
-      "ceo": "Hans Vestberg",
-      "employees": "118,400+",
-      "key_products": ["Wireless Services", "Internet Services", "Television"],
-      "key_services": ["Telecommunications", "Media", "Technology"]
-    },
-    "GS": {
-      "name": "The Goldman Sachs Group, Inc.",
-      "chinese_name": "高盛集團",
-      "icon": "https://logo.clearbit.com/goldmansachs.com",
-      "description": "全球領先的投資銀行、證券和投資管理公司。",
-      "sector": "金融",
-      "industry": "投資銀行",
-      "founded": "1869年",
-      "ipo_date": "1999-05-04",
-      "headquarters": "紐約市",
-      "ceo": "David M. Solomon",
-      "employees": "49,200+",
-      "key_products": ["Investment Banking", "Asset Management"],
-      "key_services": ["Financial Advisory", "Trading", "Underwriting"]
-    },
-    "BA": {
-      "name": "The Boeing Company",
-      "chinese_name": "波音公司",
-      "icon": "https://logo.clearbit.com/boeing.com",
-      "description": "全球領先的航空航天公司，製造民用和軍用飛機。",
-      "sector": "工業",
-      "industry": "航空航天",
-      "founded": "1916年7月15日",
-      "ipo_date": "1929-07-26",
-      "headquarters": "伊利諾伊州芝加哥",
-      "ceo": "David L. Calhoun",
-      "employees": "140,000+",
-      "key_products": ["Commercial Airplanes", "Defense Systems"],
-      "key_services": ["Aircraft Manufacturing", "Aerospace Services"]
-    },
-    "CAT": {
-      "name": "Caterpillar Inc.",
-      "chinese_name": "卡特彼勒",
-      "icon": "https://logo.clearbit.com/caterpillar.com",
-      "description": "全球領先的建築和採礦設備製造商。",
-      "sector": "工業",
-      "industry": "重型機械",
-      "founded": "1925年4月15日",
-      "ipo_date": "1929-06-01",
-      "headquarters": "伊利諾伊州迪爾菲爾德",
-      "ceo": "Jim Umpleby",
-      "employees": "109,100+",
-      "key_products": ["Construction Equipment", "Mining Equipment"],
-      "key_services": ["Manufacturing", "Distribution", "Financial Services"]
-    },
-    "HON": {
-      "name": "Honeywell International Inc.",
-      "chinese_name": "霍尼韋爾",
-      "icon": "https://logo.clearbit.com/honeywell.com",
-      "description": "一家多元化的技術和製造公司，提供航空航天、建築技術、績效材料和安全解決方案。",
-      "sector": "工業",
-      "industry": "多元化工業",
-      "founded": "1906年",
-      "ipo_date": "1925-04-09",
-      "headquarters": "北卡羅來納州夏洛特",
-      "ceo": "Vimal Kapur",
-      "employees": "99,000+",
-      "key_products": ["Aerospace", "Building Technologies", "Performance Materials"],
-      "key_services": ["Engineering", "Manufacturing", "Software"]
-    },
-    
-    "CVX": {
-      "name": "Chevron Corporation",
-      "chinese_name": "雪佛龍公司",
-      "icon": "https://logo.clearbit.com/chevron.com",
-      "description": "一家全球領先的能源公司，從事石油、天然氣和地熱能源的勘探、生產、煉油和銷售。",
-      "sector": "能源",
-      "industry": "石油和天然氣",
-      "founded": "1879年",
-      "ipo_date": "1900-01-29",
-      "headquarters": "加利福尼亞州聖拉蒙",
-      "ceo": "Michael K. Wirth",
-      "employees": "42,000+",
-      "key_products": ["Crude Oil", "Natural Gas", "Gasoline"],
-      "key_services": ["Exploration", "Production", "Refining", "Marketing"]
-    },
-    "ADBE": {
-      "name": "Adobe Inc.",
-      "chinese_name": "奧多比",
-      "icon": "https://logo.clearbit.com/adobe.com",
-      "description": "全球領先的數位媒體和數位行銷解決方案供應商。",
-      "sector": "科技",
-      "industry": "軟件",
-      "founded": "1982年",
-      "ipo_date": "1986-08-20",
-      "headquarters": "加利福尼亞州聖荷西",
-      "ceo": "Shantanu Narayen",
-      "employees": "29,000+",
-      "key_products": ["Photoshop", "Acrobat", "Illustrator"],
-      "key_services": ["Creative Cloud", "Document Cloud", "Experience Cloud"]
-    },
-    "SPY": {
-      "name": "SPDR S&P 500 ETF Trust",
-      "chinese_name": "SPDR 標普500 指數 ETF",
-      "icon": "https://logo.clearbit.com/ssga.com",
-      "description": "追蹤標準普爾500指數，提供廣泛市場的投資。",
-      "sector": "ETF",
-      "industry": "大型股指數",
-      "founded": "1993年1月22日",
-      "ipo_date": "1993-01-22",
-      "headquarters": "美國波士頓",
-      "ceo": "Cyrus Taraporevala",
-      "employees": "3,000+",
-      "key_products": ["標普500指數追蹤"],
-      "key_services": ["指數化投資", "被動式管理", "股票投資"],
-      "category": "大型股",
-      "expense_ratio": "0.0945%",
-      "inception_date": "1993-01-22",
-      "issuer": "State Street Global Advisors",
-      "index": "S&P 500 Index",
-      "holdings": [
-        "Apple Inc.",
-        "Microsoft Corp.",
-        "Amazon.com Inc."
-      ]
-    },
-    "QQQ": {
-      "name": "Invesco QQQ Trust",
-      "chinese_name": "景順QQQ信託",
-      "icon": "https://logo.clearbit.com/invesco.com",
-      "description": "追蹤納斯達克100指數，主要投資於科技股。",
-      "sector": "ETF",
-      "industry": "科技指數",
-      "founded": "1999年3月10日",
-      "ipo_date": "1999-03-10",
-      "headquarters": "美國亞特蘭大",
-      "ceo": "Andrew Schlossberg",
-      "employees": "8,500+",
-      "key_products": ["納斯達克100指數追蹤"],
-      "key_services": ["指數化投資", "被動式管理", "科技股投資"],
-      "category": "科技股",
-      "expense_ratio": "0.20%",
-      "inception_date": "1999-03-10",
-      "issuer": "Invesco",
-      "index": "Nasdaq-100 Index",
-      "holdings": [
-        "Apple Inc.",
-        "Microsoft Corp.",
-        "Amazon.com Inc.",
-        "NVIDIA Corp."
-      ]
-    },
-    "VTI": {
-      "name": "Vanguard Total Stock Market ETF",
-      "chinese_name": "先鋒整體股市 ETF",
-      "icon": "https://logo.clearbit.com/vanguard.com",
-      "description": "追蹤美國整體股市，提供廣泛市場的投資。",
-      "sector": "ETF",
-      "industry": "廣泛市場指數",
-      "founded": "2001年5月24日",
-      "ipo_date": "2001-05-24",
-      "headquarters": "美國賓夕法尼亞州馬爾文",
-      "ceo": "Tim Buckley",
-      "employees": "18,800+",
-      "key_products": ["整體市場指數追蹤"],
-      "key_services": ["指數化投資", "被動式管理", "多元化投資"],
-      "category": "廣泛市場",
-      "expense_ratio": "0.03%",
-      "inception_date": "2001-05-24",
-      "issuer": "Vanguard",
-      "index": "CRSP US Total Market Index",
-      "holdings": [
-        "Apple Inc.",
-        "Microsoft Corp.",
-        "Amazon.com Inc."
-      ]
-    },
-    "VOO": {
-      "name": "Vanguard S&P 500 ETF",
-      "chinese_name": "先鋒 標普500 指數 ETF",
-      "icon": "https://logo.clearbit.com/vanguard.com",
-      "description": "追蹤標準普爾500指數，提供廣泛市場的投資。",
-      "sector": "ETF",
-      "industry": "大型股指數",
-      "founded": "2010年9月7日",
-      "ipo_date": "2010-09-07",
-      "headquarters": "美國賓夕法尼亞州馬爾文",
-      "ceo": "Tim Buckley",
-      "employees": "18,800+",
-      "key_products": ["標普500指數追蹤"],
-      "key_services": ["指數化投資", "被動式管理", "股票投資"],
-      "category": "大型股",
-      "expense_ratio": "0.03%",
-      "inception_date": "2010-09-07",
-      "issuer": "Vanguard",
-      "index": "S&P 500 Index",
-      "holdings": [
-        "Apple Inc.",
-        "Microsoft Corp.",
-        "Amazon.com Inc."
-      ]
-    },
-    "DIA": {
-      "name": "SPDR Dow Jones Industrial Average ETF Trust",
-      "chinese_name": "SPDR 道瓊工業平均指數 ETF",
-      "icon": "https://logo.clearbit.com/ssga.com",
-      "description": "追蹤道瓊工業平均指數，投資於30家大型美國公司。",
-      "sector": "ETF",
-      "industry": "工業指數",
-      "founded": "1998年1月14日",
-      "ipo_date": "1998-01-14",
-      "headquarters": "美國波士頓",
-      "ceo": "Cyrus Taraporevala",
-      "employees": "3,000+",
-      "key_products": ["道瓊斯工業指數追蹤"],
-      "key_services": ["指數化投資", "被動式管理", "藍籌股投資"],
-      "category": "大型股",
-      "expense_ratio": "0.16%",
-      "inception_date": "1998-01-29",
-      "issuer": "State Street Global Advisors",
-      "index": "Dow Jones Industrial Average",
-      "holdings": [
-        "UnitedHealth Group Inc.",
-        "Goldman Sachs Group Inc.",
-        "Microsoft Corp."
-      ]
-    },
-    "ARKK": {
-      "name": "ARK Innovation ETF",
-      "chinese_name": "ARK 創新 ETF",
-      "icon": "https://logo.clearbit.com/ark-funds.com",
-      "description": "積極管理型ETF，投資於具有顛覆性創新的公司。",
-      "sector": "ETF",
-      "industry": "創新科技",
-      "founded": "2014年10月31日",
-      "ipo_date": "2014-10-31",
-      "headquarters": "美國紐約",
-      "ceo": "Cathie Wood",
-      "employees": "100+",
-      "key_products": ["創新科技投資組合"],
-      "key_services": ["主動式管理", "創新投資", "成長型投資"],
-      "category": "成長型",
-      "expense_ratio": "0.75%",
-      "inception_date": "2014-10-31",
-      "issuer": "ARK Investment Management",
-      "index": "N/A (Actively Managed)",
-      "holdings": [
-        "Tesla Inc.",
-        "Zoom Video Communications",
-        "Roku Inc."
-      ]
-    },
-    "XLF": {
-      "name": "Financial Select Sector SPDR Fund",
-      "chinese_name": "金融類股精選 SPDR 基金",
-      "icon": "https://logo.clearbit.com/ssga.com",
-      "description": "追蹤金融類股，包括銀行、保險和投資公司。",
-      "sector": "ETF",
-      "industry": "金融指數",
-      "founded": "1998年12月16日",
-      "ipo_date": "1998-12-16",
-      "headquarters": "美國波士頓",
-      "ceo": "Cyrus Taraporevala",
-      "employees": "3,000+",
-      "key_products": ["金融業指數追蹤"],
-      "key_services": ["指數化投資", "被動式管理", "金融股投資"],
-      "category": "金融股",
-      "expense_ratio": "0.10%",
-      "inception_date": "1998-12-22",
-      "issuer": "State Street Global Advisors",
-      "index": "Financial Select Sector Index",
-      "holdings": [
-        "Berkshire Hathaway Inc.",
-        "JPMorgan Chase & Co.",
-        "Bank of America Corp."
-      ]
-    },
-    "XLV": {
-      "name": "Health Care Select Sector SPDR Fund",
-      "chinese_name": "醫療保健類股精選 SPDR 基金",
-      "icon": "https://logo.clearbit.com/ssga.com",
-      "description": "追蹤醫療保健類股，包括製藥、醫療設備和生物技術公司。",
-      "sector": "ETF",
-      "industry": "醫療保健指數",
-      "founded": "1998年12月16日",
-      "ipo_date": "1998-12-16",
-      "headquarters": "美國波士頓",
-      "ceo": "Cyrus Taraporevala",
-      "employees": "3,000+",
-      "key_products": ["醫療保健指數追蹤"],
-      "key_services": ["指數化投資", "被動式管理", "醫療股投資"],
-      "category": "醫療保健股",
-      "expense_ratio": "0.10%",
-      "inception_date": "1998-12-22",
-      "issuer": "State Street Global Advisors",
-      "index": "Health Care Select Sector Index",
-      "holdings": [
-        "UnitedHealth Group Inc.",
-        "Johnson & Johnson",
-        "Eli Lilly and Co."
-      ]
-    },
-    "XLE": {
-      "name": "Energy Select Sector SPDR Fund",
-      "chinese_name": "能源類股精選 SPDR 基金",
-      "icon": "https://logo.clearbit.com/ssga.com",
-      "description": "追蹤能源類股，包括石油、天然氣和可再生能源公司。",
-      "sector": "ETF",
-      "industry": "能源指數",
-      "founded": "1998年12月16日",
-      "ipo_date": "1998-12-16",
-      "headquarters": "美國波士頓",
-      "ceo": "Cyrus Taraporevala",
-      "employees": "3,000+",
-      "key_products": ["能源業指數追蹤"],
-      "key_services": ["指數化投資", "被動式管理", "能源股投資"],
-      "category": "能源股",
-      "expense_ratio": "0.10%",
-      "inception_date": "1998-12-22",
-      "issuer": "State Street Global Advisors",
-      "index": "Energy Select Sector Index",
-      "holdings": [
-        "Exxon Mobil Corp.",
-        "Chevron Corp.",
-        "ConocoPhillips"
-      ]
-    },
-    "IWM": {
-      "name": "iShares Russell 2000 ETF",
-      "chinese_name": "iShares 羅素2000 ETF",
-      "icon": "https://logo.clearbit.com/blackrock.com",
-      "description": "追蹤羅素2000指數，投資於小型股。",
-      "sector": "ETF",
-      "industry": "小型股指數",
-      "founded": "2000年5月22日",
-      "ipo_date": "2000-05-22",
-      "headquarters": "美國紐約",
-      "ceo": "Larry Fink",
-      "employees": "19,900+",
-      "key_products": ["小型股指數追蹤"],
-      "key_services": ["指數化投資", "被動式管理", "小型股投資"],
-      "category": "小型股",
-      "expense_ratio": "0.19%",
-      "inception_date": "2000-05-22",
-      "issuer": "BlackRock",
-      "index": "Russell 2000 Index",
-      "holdings": [
-        "TransMedics Group Inc.",
-        "Super Micro Computer Inc.",
-        "ACM Research, Inc."
-      ]
-    }
+  "2330": {
+    "name": "Taiwan Semiconductor Manufacturing Co., Ltd.",
+    "chinese_name": "台灣積體電路製造股份有限公司",
+    "icon": "https://logo.clearbit.com/tsmc.com",
+    "description": "全球最大的半導體代工企業，提供先進製程技術，客戶包括蘋果、輝達等國際大廠。",
+    "sector": "電子科技業",
+    "industry": "半導體",
+    "founded": "1987年2月21日",
+    "ipo_date": "1994-09-05",
+    "headquarters": "新竹",
+    "key_products": [
+      "晶圓代工",
+      "先進製程晶片"
+    ],
+    "key_services": [
+      "半導體製造",
+      "技術研發"
+    ]
+  },
+  "2454": {
+    "name": "MediaTek Inc.",
+    "chinese_name": "聯發科技股份有限公司",
+    "icon": "https://logo.clearbit.com/mediatek.com",
+    "description": "台灣領先的IC設計公司，專注於手機晶片、物聯網及AI解決方案。",
+    "sector": "電子科技業",
+    "industry": "IC設計",
+    "founded": "1997年5月28日",
+    "ipo_date": "2001-07-23",
+    "headquarters": "新竹",
+    "key_products": [
+      "手機晶片",
+      "物聯網晶片"
+    ],
+    "key_services": [
+      "晶片設計",
+      "技術支援"
+    ]
+  },
+  "2317": {
+    "name": "Hon Hai Precision Industry Co., Ltd.",
+    "chinese_name": "鴻海精密工業股份有限公司",
+    "icon": "https://logo.clearbit.com/foxconn.com",
+    "description": "全球最大的電子代工企業，產品包括手機、電腦及汽車電子。",
+    "sector": "電子科技業",
+    "industry": "電子代工",
+    "founded": "1974年2月20日",
+    "ipo_date": "1991-06-18",
+    "headquarters": "新北",
+    "key_products": [
+      "iPhone組裝",
+      "伺服器"
+    ],
+    "key_services": [
+      "電子製造服務"
+    ]
+  },
+  "2303": {
+    "name": "United Microelectronics Corporation",
+    "chinese_name": "聯華電子股份有限公司",
+    "icon": "https://logo.clearbit.com/umc.com",
+    "description": "台灣第二大半導體代工企業，提供成熟製程技術。",
+    "sector": "電子科技業",
+    "industry": "半導體",
+    "founded": "1980年5月22日",
+    "ipo_date": "1985-07-16",
+    "headquarters": "新竹",
+    "key_products": [
+      "晶圓代工",
+      "成熟製程晶片"
+    ],
+    "key_services": [
+      "半導體製造"
+    ]
+  },
+  "2308": {
+    "name": "Delta Electronics, Inc.",
+    "chinese_name": "台達電子工業股份有限公司",
+    "icon": "https://logo.clearbit.com/deltaww.com",
+    "description": "全球電源管理與綠能解決方案領導者，產品包括電源供應器與電動車元件。",
+    "sector": "電子科技業",
+    "industry": "電源管理",
+    "founded": "1971年8月20日",
+    "ipo_date": "1988-12-19",
+    "headquarters": "台北",
+    "key_products": [
+      "電源供應器",
+      "電動車元件"
+    ],
+    "key_services": [
+      "能源解決方案"
+    ]
+  },
+  "3711": {
+    "name": "ASE Technology Holding Co., Ltd.",
+    "chinese_name": "日月光投資控股股份有限公司",
+    "icon": "https://logo.clearbit.com/aseglobal.com",
+    "description": "全球領先的半導體封測企業，提供封裝與測試服務。",
+    "sector": "電子科技業",
+    "industry": "封測",
+    "founded": "1984年3月23日",
+    "ipo_date": "1989-07-25",
+    "headquarters": "高雄",
+    "key_products": [
+      "半導體封裝",
+      "測試服務"
+    ],
+    "key_services": [
+      "封測技術支援"
+    ]
+  },
+  "3008": {
+    "name": "Largan Precision Co., Ltd.",
+    "chinese_name": "大立光電股份有限公司",
+    "icon": "https://logo.clearbit.com/largan.com.tw",
+    "description": "全球領先的手機鏡頭製造商，專注於光學技術。",
+    "sector": "電子科技業",
+    "industry": "光學元件",
+    "founded": "1987年5月17日",
+    "ipo_date": "2002-03-11",
+    "headquarters": "台中",
+    "key_products": [
+      "手機鏡頭",
+      "光學模組"
+    ],
+    "key_services": [
+      "光學技術研發"
+    ]
+  },
+  "2357": {
+    "name": "Asustek Computer Inc.",
+    "chinese_name": "華碩電腦股份有限公司",
+    "icon": "https://logo.clearbit.com/asus.com",
+    "description": "台灣知名的電腦與手機製造商，產品包括筆電與主機板。",
+    "sector": "電子科技業",
+    "industry": "電子製造",
+    "founded": "1989年4月2日",
+    "ipo_date": "1996-06-14",
+    "headquarters": "台北",
+    "key_products": [
+      "筆記型電腦",
+      "主機板"
+    ],
+    "key_services": [
+      "電子製造服務"
+    ]
+  },
+  "2353": {
+    "name": "Acer Incorporated",
+    "chinese_name": "宏碁股份有限公司",
+    "icon": "https://logo.clearbit.com/acer.com",
+    "description": "台灣知名的電腦製造商，產品包括筆電與顯示器。",
+    "sector": "電子科技業",
+    "industry": "電子製造",
+    "founded": "1976年8月1日",
+    "ipo_date": "1996-09-18",
+    "headquarters": "新北",
+    "key_products": [
+      "筆記型電腦",
+      "顯示器"
+    ],
+    "key_services": [
+      "電子製造服務"
+    ]
+  },
+  "2379": {
+    "name": "Realtek Semiconductor Corp.",
+    "chinese_name": "瑞昱半導體股份有限公司",
+    "icon": "https://logo.clearbit.com/realtek.com",
+    "description": "專注於音訊與網路晶片的IC設計公司，產品廣泛應用於PC與消費電子。",
+    "sector": "電子科技業",
+    "industry": "IC設計",
+    "founded": "1987年10月21日",
+    "ipo_date": "1998-10-26",
+    "headquarters": "新竹",
+    "key_products": [
+      "音訊晶片",
+      "網路晶片"
+    ],
+    "key_services": [
+      "晶片設計"
+    ]
+  },
+  "2382": {
+    "name": "Quanta Computer Inc.",
+    "chinese_name": "廣達電腦股份有限公司",
+    "icon": "https://logo.clearbit.com/quanta.com",
+    "description": "全球領先的筆電與伺服器製造商，客戶包括蘋果、戴爾等。",
+    "sector": "電子科技業",
+    "industry": "電子代工",
+    "founded": "1988年5月9日",
+    "ipo_date": "1999-01-08",
+    "headquarters": "桃園",
+    "key_products": [
+      "筆記型電腦",
+      "伺服器"
+    ],
+    "key_services": [
+      "ODM服務"
+    ]
+  },
+  "2395": {
+    "name": "Advantech Co., Ltd.",
+    "chinese_name": "研華股份有限公司",
+    "icon": "https://logo.clearbit.com/advantech.com",
+    "description": "台灣領先的工業電腦製造商，產品應用於物聯網。",
+    "sector": "電子科技業",
+    "industry": "工業電腦",
+    "founded": "1983年9月1日",
+    "ipo_date": "1999-12-13",
+    "headquarters": "台北",
+    "key_products": [
+      "工業電腦",
+      "物聯網設備"
+    ],
+    "key_services": [
+      "工業自動化解決方案"
+    ]
+  },
+  "3034": {
+    "name": "Novatek Microelectronics Corp.",
+    "chinese_name": "聯詠科技股份有限公司",
+    "icon": "https://logo.clearbit.com/novatek.com.tw",
+    "description": "台灣主要的顯示驅動IC設計公司，應用於電視與手機螢幕。",
+    "sector": "電子科技業",
+    "industry": "IC設計",
+    "founded": "1997年5月28日",
+    "ipo_date": "2001-05-25",
+    "headquarters": "新竹",
+    "key_products": [
+      "顯示驅動IC",
+      "影像處理晶片"
+    ],
+    "key_services": [
+      "晶片設計"
+    ]
+  },
+  "3037": {
+    "name": "Unimicron Technology Corp.",
+    "chinese_name": "欣興電子股份有限公司",
+    "icon": "https://logo.clearbit.com/unimicron.com",
+    "description": "台灣領先的印刷電路板製造商，產品應用於電子產品。",
+    "sector": "電子科技業",
+    "industry": "電路板",
+    "founded": "1990年1月25日",
+    "ipo_date": "1997-12-24",
+    "headquarters": "桃園",
+    "key_products": [
+      "印刷電路板",
+      "HDI板"
+    ],
+    "key_services": [
+      "電路板製造"
+    ]
+  },
+  "6415": {
+    "name": "Silergy Corp.",
+    "chinese_name": "矽力杰股份有限公司",
+    "icon": "https://logo.clearbit.com/silergy.com",
+    "description": "台灣領先的電源管理IC設計公司，應用於消費電子。",
+    "sector": "電子科技業",
+    "industry": "IC設計",
+    "founded": "2008年2月1日",
+    "ipo_date": "2013-03-26",
+    "headquarters": "新竹",
+    "key_products": [
+      "電源管理IC",
+      "類比晶片"
+    ],
+    "key_services": [
+      "晶片設計"
+    ]
+  },
+  "3231": {
+    "name": "Wistron Corporation",
+    "chinese_name": "緯創資通股份有限公司",
+    "icon": "https://logo.clearbit.com/wistron.com",
+    "description": "全球主要的電子代工企業，產品包括筆電與伺服器。",
+    "sector": "電子科技業",
+    "industry": "電子代工",
+    "founded": "2001年5月30日",
+    "ipo_date": "2003-08-19",
+    "headquarters": "台北",
+    "key_products": [
+      "筆記型電腦",
+      "伺服器"
+    ],
+    "key_services": [
+      "ODM服務"
+    ]
+  },
+  "4938": {
+    "name": "Pegatron Corporation",
+    "chinese_name": "和碩聯合科技股份有限公司",
+    "icon": "https://logo.clearbit.com/pegatroncorp.com",
+    "description": "台灣主要的電子代工與通訊設備製造商，產品包括手機與主機板。",
+    "sector": "電子科技業",
+    "industry": "電子代工",
+    "founded": "2008年1月1日",
+    "ipo_date": "2010-06-24",
+    "headquarters": "台北",
+    "key_products": [
+      "手機",
+      "主機板"
+    ],
+    "key_services": [
+      "ODM服務"
+    ]
+  },
+  "2345": {
+    "name": "Accton Technology Corporation",
+    "chinese_name": "智邦科技股份有限公司",
+    "icon": "https://logo.clearbit.com/accton.com",
+    "description": "台灣領先的網路設備製造商，產品包括交換器與路由器。",
+    "sector": "電子科技業",
+    "industry": "網路設備",
+    "founded": "1988年2月9日",
+    "ipo_date": "1995-11-15",
+    "headquarters": "新竹",
+    "key_products": [
+      "網路交換器",
+      "路由器"
+    ],
+    "key_services": [
+      "網路解決方案"
+    ]
+  },
+  "3017": {
+    "name": "Asia Vital Components Co., Ltd.",
+    "chinese_name": "奇鋐科技股份有限公司",
+    "icon": "https://logo.clearbit.com/avc.com.tw",
+    "description": "台灣主要的散熱解決方案供應商，產品應用於電子設備。",
+    "sector": "電子科技業",
+    "industry": "散熱元件",
+    "founded": "1991年5月1日",
+    "ipo_date": "2002-11-11",
+    "headquarters": "新北",
+    "key_products": [
+      "散熱器",
+      "風扇"
+    ],
+    "key_services": [
+      "散熱技術支援"
+    ]
+  },
+  "3661": {
+    "name": "Alchip Technologies, Limited",
+    "chinese_name": "世芯電子股份有限公司",
+    "icon": "https://logo.clearbit.com/alchip.com",
+    "description": "台灣領先的ASIC設計公司，服務AI與高效能運算。",
+    "sector": "電子科技業",
+    "industry": "IC設計",
+    "founded": "2003年2月27日",
+    "ipo_date": "2014-10-28",
+    "headquarters": "台北",
+    "key_products": [
+      "ASIC晶片",
+      "高效能運算晶片"
+    ],
+    "key_services": [
+      "晶片設計"
+    ]
+  },
+  "6669": {
+    "name": "Wiwynn Corporation",
+    "chinese_name": "緯穎科技服務股份有限公司",
+    "icon": "https://logo.clearbit.com/wiwynn.com",
+    "description": "台灣領先的雲端伺服器製造商，服務全球數據中心。",
+    "sector": "電子科技業",
+    "industry": "伺服器製造",
+    "founded": "2012年3月1日",
+    "ipo_date": "2017-12-06",
+    "headquarters": "新北",
+    "key_products": [
+      "雲端伺服器",
+      "儲存設備"
+    ],
+    "key_services": [
+      "數據中心解決方案"
+    ]
+  },
+  "6239": {
+    "name": "Powertech Technology Inc.",
+    "chinese_name": "力成科技股份有限公司",
+    "icon": "https://logo.clearbit.com/powertech.com.tw",
+    "description": "台灣主要的半導體封測企業，產品包括記憶體封裝。",
+    "sector": "電子科技業",
+    "industry": "封測",
+    "founded": "1997年5月15日",
+    "ipo_date": "2004-11-08",
+    "headquarters": "新竹",
+    "key_products": [
+      "記憶體封裝",
+      "測試服務"
+    ],
+    "key_services": [
+      "封測技術支援"
+    ]
+  },
+  "2408": {
+    "name": "Nanya Technology Corporation",
+    "chinese_name": "南亞科技股份有限公司",
+    "icon": "https://logo.clearbit.com/nanya.com",
+    "description": "台灣主要的記憶體製造商，產品包括DRAM。",
+    "sector": "電子科技業",
+    "industry": "半導體",
+    "founded": "1995年3月4日",
+    "ipo_date": "2000-08-17",
+    "headquarters": "新北",
+    "key_products": [
+      "DRAM",
+      "記憶體模組"
+    ],
+    "key_services": [
+      "半導體製造"
+    ]
+  },
+  "2344": {
+    "name": "Winbond Electronics Corporation",
+    "chinese_name": "華邦電子股份有限公司",
+    "icon": "https://logo.clearbit.com/winbond.com",
+    "description": "台灣主要的記憶體與微控制器製造商，產品應用於消費電子。",
+    "sector": "電子科技業",
+    "industry": "半導體",
+    "founded": "1987年9月29日",
+    "ipo_date": "1995-10-18",
+    "headquarters": "台中",
+    "key_products": [
+      "快閃記憶體",
+      "微控制器"
+    ],
+    "key_services": [
+      "半導體製造"
+    ]
+  },
+  "3481": {
+    "name": "Innolux Corporation",
+    "chinese_name": "群創光電股份有限公司",
+    "icon": "https://logo.clearbit.com/innolux.com",
+    "description": "台灣主要的顯示面板製造商，產品應用於電視與手機。",
+    "sector": "電子科技業",
+    "industry": "面板",
+    "founded": "2003年1月14日",
+    "ipo_date": "2006-10-24",
+    "headquarters": "苗栗",
+    "key_products": [
+      "液晶面板",
+      "觸控模組"
+    ],
+    "key_services": [
+      "顯示技術研發"
+    ]
+  },
+  "2409": {
+    "name": "AU Optronics Corp.",
+    "chinese_name": "友達光電股份有限公司",
+    "icon": "https://logo.clearbit.com/auo.com",
+    "description": "台灣領先的顯示面板製造商，產品應用於顯示器與電視。",
+    "sector": "電子科技業",
+    "industry": "面板",
+    "founded": "2001年8月1日",
+    "ipo_date": "2002-09-11",
+    "headquarters": "新竹",
+    "key_products": [
+      "液晶面板",
+      "顯示器"
+    ],
+    "key_services": [
+      "顯示技術研發"
+    ]
+  },
+  "2356": {
+    "name": "Inventec Corporation",
+    "chinese_name": "英業達股份有限公司",
+    "icon": "https://logo.clearbit.com/inventec.com",
+    "description": "台灣主要的電子代工企業，產品包括筆電與伺服器。",
+    "sector": "電子科技業",
+    "industry": "電子代工",
+    "founded": "1975年6月1日",
+    "ipo_date": "1996-11-13",
+    "headquarters": "台北",
+    "key_products": [
+      "筆記型電腦",
+      "伺服器"
+    ],
+    "key_services": [
+      "ODM服務"
+    ]
+  },
+  "2324": {
+    "name": "Compal Electronics, Inc.",
+    "chinese_name": "仁寶電腦工業股份有限公司",
+    "icon": "https://logo.clearbit.com/compal.com",
+    "description": "台灣主要的電子代工企業，產品包括筆電與平板。",
+    "sector": "電子科技業",
+    "industry": "電子代工",
+    "founded": "1984年6月1日",
+    "ipo_date": "1992-02-18",
+    "headquarters": "台北",
+    "key_products": [
+      "筆記型電腦",
+      "平板電腦"
+    ],
+    "key_services": [
+      "ODM服務"
+    ]
+  },
+  "2301": {
+    "name": "Lite-On Technology Corporation",
+    "chinese_name": "光寶科技股份有限公司",
+    "icon": "https://logo.clearbit.com/liteon.com",
+    "description": "台灣領先的電子元件與電源供應器製造商。",
+    "sector": "電子科技業",
+    "industry": "電子元件",
+    "founded": "1975年6月2日",
+    "ipo_date": "1995-11-17",
+    "headquarters": "台北",
+    "key_products": [
+      "電源供應器",
+      "光電元件"
+    ],
+    "key_services": [
+      "電子製造服務"
+    ]
+  },
+  "8046": {
+    "name": "Nan Ya Printed Circuit Board Corporation",
+    "chinese_name": "南亞電路板股份有限公司",
+    "icon": "https://logo.clearbit.com/nanyapcb.com.tw",
+    "description": "台灣主要的印刷電路板製造商，產品應用於電子設備。",
+    "sector": "電子科技業",
+    "industry": "電路板",
+    "founded": "1985年10月1日",
+    "ipo_date": "2000-07-25",
+    "headquarters": "新北",
+    "key_products": [
+      "印刷電路板",
+      "多層板"
+    ],
+    "key_services": [
+      "電路板製造"
+    ]
+  },
+  "2347": {
+    "name": "Synnex Technology International Corporation",
+    "chinese_name": "聯強國際股份有限公司",
+    "icon": "https://logo.clearbit.com/synnex.com.tw",
+    "description": "台灣領先的電子產品通路商，代理多品牌電子設備。",
+    "sector": "電子科技業",
+    "industry": "通路商",
+    "founded": "1988年9月1日",
+    "ipo_date": "1995-11-15",
+    "headquarters": "台北",
+    "key_products": [
+      "電腦設備",
+      "消費電子"
+    ],
+    "key_services": [
+      "通路銷售"
+    ]
+  },
+  "3702": {
+    "name": "WPG Holdings Limited",
+    "chinese_name": "大聯大控股股份有限公司",
+    "icon": "https://logo.clearbit.com/wpgholdings.com",
+    "description": "全球領先的電子元件通路商，服務半導體產業。",
+    "sector": "電子科技業",
+    "industry": "通路商",
+    "founded": "2005年5月1日",
+    "ipo_date": "2005-11-08",
+    "headquarters": "台北",
+    "key_products": [
+      "半導體元件",
+      "電子零件"
+    ],
+    "key_services": [
+      "通路銷售"
+    ]
+  },
+
+  "8454": {
+    "name": "Fubon Media Technology Co., Ltd.",
+    "chinese_name": "富邦媒體科技股份有限公司",
+    "icon": "https://logo.clearbit.com/momo.com.tw",
+    "description": "台灣領先的電子商務與媒體公司，經營momo購物平台。",
+    "sector": "電子科技業",
+    "industry": "電子商務",
+    "founded": "2004年8月1日",
+    "ipo_date": "2014-12-23",
+    "headquarters": "台北",
+    "key_products": [
+      "線上購物平台",
+      "電視購物"
+    ],
+    "key_services": [
+      "電子商務服務"
+    ]
+  },
+  
+  "3529": {
+    "name": "eMemory Technology Inc.",
+    "chinese_name": "力旺電子股份有限公司",
+    "icon": "https://logo.clearbit.com/ememory.com.tw",
+    "description": "台灣領先的嵌入式記憶體IP設計公司，應用於半導體。",
+    "sector": "電子科技業",
+    "industry": "IC設計",
+    "founded": "2000年8月1日",
+    "ipo_date": "2008-12-23",
+    "headquarters": "新竹",
+    "key_products": [
+      "嵌入式記憶體IP",
+      "安全晶片"
+    ],
+    "key_services": [
+      "晶片設計"
+    ]
+  },
+  "5269": {
+    "name": "ASMedia Technology Inc.",
+    "chinese_name": "祥碩科技股份有限公司",
+    "icon": "https://logo.clearbit.com/asmedia.com.tw",
+    "description": "台灣高速傳輸晶片設計公司，產品應用於USB與PCIe。",
+    "sector": "電子科技業",
+    "industry": "IC設計",
+    "founded": "2004年3月1日",
+    "ipo_date": "2012-12-27",
+    "headquarters": "台北",
+    "key_products": [
+      "USB控制器",
+      "PCIe晶片"
+    ],
+    "key_services": [
+      "晶片設計"
+    ]
+  },
+  "2881": {
+    "name": "Fubon Financial Holding Co., Ltd.",
+    "chinese_name": "富邦金融控股股份有限公司",
+    "icon": "https://logo.clearbit.com/fubon.com",
+    "description": "台灣領先的金融控股公司，業務包括銀行、保險與證券。",
+    "sector": "金融保險業",
+    "industry": "金融控股",
+    "founded": "2001年12月19日",
+    "ipo_date": "2001-12-19",
+    "headquarters": "台北",
+    "key_products": [
+      "銀行服務",
+      "保險產品"
+    ],
+    "key_services": [
+      "財富管理",
+      "企業金融"
+    ]
+  },
+  "2882": {
+    "name": "Cathay Financial Holding Co., Ltd.",
+    "chinese_name": "國泰金融控股股份有限公司",
+    "icon": "https://logo.clearbit.com/cathayholdings.com",
+    "description": "台灣最大的金融控股公司之一，業務涵蓋銀行、保險及證券。",
+    "sector": "金融保險業",
+    "industry": "金融控股",
+    "founded": "2001年12月31日",
+    "ipo_date": "2001-12-31",
+    "headquarters": "台北",
+    "key_products": [
+      "銀行服務",
+      "保險產品"
+    ],
+    "key_services": [
+      "財富管理",
+      "企業金融"
+    ]
+  },
+  "2891": {
+    "name": "CTBC Financial Holding Co., Ltd.",
+    "chinese_name": "中國信託金融控股股份有限公司",
+    "icon": "https://logo.clearbit.com/ctbcholding.com",
+    "description": "台灣主要的金融控股公司，業務涵蓋銀行與信用卡服務。",
+    "sector": "金融保險業",
+    "industry": "金融控股",
+    "founded": "2002年5月17日",
+    "ipo_date": "2002-05-17",
+    "headquarters": "台北",
+    "key_products": [
+      "信用卡",
+      "銀行服務"
+    ],
+    "key_services": [
+      "財富管理"
+    ]
+  },
+  "2886": {
+    "name": "Mega Financial Holding Co., Ltd.",
+    "chinese_name": "兆豐金融控股股份有限公司",
+    "icon": "https://logo.clearbit.com/megaholdings.com.tw",
+    "description": "台灣國營背景的金融控股公司，提供企業金融與國際業務。",
+    "sector": "金融保險業",
+    "industry": "金融控股",
+    "founded": "2002年2月4日",
+    "ipo_date": "2002-02-04",
+    "headquarters": "台北",
+    "key_products": [
+      "銀行服務",
+      "外匯業務"
+    ],
+    "key_services": [
+      "企業金融"
+    ]
+  },
+  "2884": {
+    "name": "E.SUN Financial Holding Co., Ltd.",
+    "chinese_name": "玉山金融控股股份有限公司",
+    "icon": "https://logo.clearbit.com/esunfhc.com.tw",
+    "description": "台灣成長快速的金融控股公司，專注於數位銀行服務。",
+    "sector": "金融保險業",
+    "industry": "金融控股",
+    "founded": "2002年1月28日",
+    "ipo_date": "2002-01-28",
+    "headquarters": "台北",
+    "key_products": [
+      "數位銀行",
+      "信用卡"
+    ],
+    "key_services": [
+      "財富管理"
+    ]
+  },
+  "2885": {
+    "name": "Yuanta Financial Holding Co., Ltd.",
+    "chinese_name": "元大金融控股股份有限公司",
+    "icon": "https://logo.clearbit.com/yuanta.com",
+    "description": "台灣領先的證券與金融服務公司，業務涵蓋ETF發行。",
+    "sector": "金融保險業",
+    "industry": "金融控股",
+    "founded": "2002年2月4日",
+    "ipo_date": "2002-02-04",
+    "headquarters": "台北",
+    "key_products": [
+      "證券交易",
+      "ETF產品"
+    ],
+    "key_services": [
+      "財富管理"
+    ]
+  },
+  "2887": {
+    "name": "Taishin Financial Holding Co., Ltd.",
+    "chinese_name": "台新金融控股股份有限公司",
+    "icon": "https://logo.clearbit.com/taishinbank.com.tw",
+    "description": "台灣重要的金融控股公司，專注於零售銀行與財富管理。",
+    "sector": "金融保險業",
+    "industry": "金融控股",
+    "founded": "2002年2月18日",
+    "ipo_date": "2002-02-18",
+    "headquarters": "台北",
+    "key_products": [
+      "銀行服務",
+      "信用卡"
+    ],
+    "key_services": [
+      "財富管理"
+    ]
+  },
+  "2892": {
+    "name": "First Financial Holding Co., Ltd.",
+    "chinese_name": "第一金融控股股份有限公司",
+    "icon": "https://logo.clearbit.com/firstholding.com.tw",
+    "description": "台灣老牌金融控股公司，提供銀行與證券服務。",
+    "sector": "金融保險業",
+    "industry": "金融控股",
+    "founded": "2003年1月2日",
+    "ipo_date": "2003-01-02",
+    "headquarters": "台北",
+    "key_products": [
+      "銀行服務",
+      "證券交易"
+    ],
+    "key_services": [
+      "企業金融"
+    ]
+  },
+  "5880": {
+    "name": "Taiwan Cooperative Financial Holding Co., Ltd.",
+    "chinese_name": "合作金庫金融控股股份有限公司",
+    "icon": "https://logo.clearbit.com/tcfhc.com.tw",
+    "description": "台灣具合作背景的金融控股公司，提供銀行與保險服務。",
+    "sector": "金融保險業",
+    "industry": "金融控股",
+    "founded": "2011年12月1日",
+    "ipo_date": "2011-12-01",
+    "headquarters": "台北",
+    "key_products": [
+      "銀行服務",
+      "保險產品"
+    ],
+    "key_services": [
+      "財富管理"
+    ]
+  },
+  "2880": {
+    "name": "Hua Nan Financial Holdings Co., Ltd.",
+    "chinese_name": "華南金融控股股份有限公司",
+    "icon": "https://logo.clearbit.com/hnfhc.com.tw",
+    "description": "台灣老牌金融控股公司，提供銀行與證券服務。",
+    "sector": "金融保險業",
+    "industry": "金融控股",
+    "founded": "2001年12月19日",
+    "ipo_date": "2001-12-19",
+    "headquarters": "台北",
+    "key_products": [
+      "銀行服務",
+      "證券交易"
+    ],
+    "key_services": [
+      "財富管理"
+    ]
+  },
+  "2890": {
+    "name": "SinoPac Financial Holdings Co., Ltd.",
+    "chinese_name": "永豐金融控股股份有限公司",
+    "icon": "https://logo.clearbit.com/sinopac.com",
+    "description": "台灣中型金融控股公司，業務包括銀行與證券。",
+    "sector": "金融保險業",
+    "industry": "金融控股",
+    "founded": "2002年5月9日",
+    "ipo_date": "2002-05-09",
+    "headquarters": "台北",
+    "key_products": [
+      "銀行服務",
+      "證券交易"
+    ],
+    "key_services": [
+      "財富管理"
+    ]
+  },
+  "5876": {
+    "name": "Shanghai Commercial & Savings Bank, Ltd.",
+    "chinese_name": "上海商業儲蓄銀行股份有限公司",
+    "icon": "https://logo.clearbit.com/scsb.com.tw",
+    "description": "台灣重要的商業銀行，提供零售與企業金融服務。",
+    "sector": "金融保險業",
+    "industry": "銀行",
+    "founded": "1915年10月1日",
+    "ipo_date": "1998-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "存款服務",
+      "貸款服務"
+    ],
+    "key_services": [
+      "企業金融"
+    ]
+  },
+  "2883": {
+    "name": "China Development Financial Holding Corp.",
+    "chinese_name": "凱基金融控股股份有限公司",
+    "icon": "https://logo.clearbit.com/cdfholding.com",
+    "description": "台灣專注於創投與金融服務的控股公司。",
+    "sector": "金融保險業",
+    "industry": "金融控股",
+    "founded": "2001年12月28日",
+    "ipo_date": "2001-12-28",
+    "headquarters": "台北",
+    "key_products": [
+      "創投基金",
+      "銀行服務"
+    ],
+    "key_services": [
+      "企業金融"
+    ]
+  },
+  "2801": {
+    "name": "Chang Hwa Commercial Bank, Ltd.",
+    "chinese_name": "彰化商業銀行股份有限公司",
+    "icon": "https://logo.clearbit.com/chb.com.tw",
+    "description": "台灣歷史悠久的商業銀行，提供零售與企業金融服務。",
+    "sector": "金融保險業",
+    "industry": "銀行",
+    "founded": "1905年6月5日",
+    "ipo_date": "1998-06-01",
+    "headquarters": "台中",
+    "key_products": [
+      "存款服務",
+      "貸款服務"
+    ],
+    "key_services": [
+      "財富管理"
+    ]
+  },
+  "1101": {
+    "name": "Taiwan Cement Corporation",
+    "chinese_name": "台灣水泥股份有限公司",
+    "icon": "https://logo.clearbit.com/taiwancement.com",
+    "description": "台灣最大的水泥製造商，產品應用於建築與基礎建設。",
+    "sector": "傳產製造業",
+    "industry": "水泥",
+    "founded": "1946年5月1日",
+    "ipo_date": "1962-02-09",
+    "headquarters": "台北",
+    "key_products": [
+      "水泥",
+      "預拌混凝土"
+    ],
+    "key_services": [
+      "建材供應"
+    ]
+  },
+  "1102": {
+    "name": "Asia Cement Corporation",
+    "chinese_name": "亞洲水泥股份有限公司",
+    "icon": "https://logo.clearbit.com/asiacement.com.tw",
+    "description": "台灣主要的 цемент製造商，產品應用於建築與基礎建設。",
+    "sector": "傳產製造業",
+    "industry": "水泥",
+    "founded": "1957年3月21日",
+    "ipo_date": "1962-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "水泥",
+      "預拌混凝土"
+    ],
+    "key_services": [
+      "建材供應"
+    ]
+  },
+  "1301": {
+    "name": "Formosa Plastics Corporation",
+    "chinese_name": "台灣塑膠工業股份有限公司",
+    "icon": "https://logo.clearbit.com/formosaplastics.com",
+    "description": "台灣最大的塑化企業，產品涵蓋塑膠原料與化學纖維。",
+    "sector": "傳產製造業",
+    "industry": "塑化",
+    "founded": "1954年11月5日",
+    "ipo_date": "1964-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "PVC",
+      "聚乙烯"
+    ],
+    "key_services": [
+      "化工原料供應"
+    ]
+  },
+  "1303": {
+    "name": "Nan Ya Plastics Corporation",
+    "chinese_name": "南亞塑膠工業股份有限公司",
+    "icon": "https://logo.clearbit.com/nanyaplastics.com",
+    "description": "台灣塑化產業龍頭，產品包括塑膠製品與電子材料。",
+    "sector": "傳產製造業",
+    "industry": "塑化",
+    "founded": "1958年8月22日",
+    "ipo_date": "1967-04-01",
+    "headquarters": "台北",
+    "key_products": [
+      "聚酯纖維",
+      "電子材料"
+    ],
+    "key_services": [
+      "化工原料供應"
+    ]
+  },
+  "2002": {
+    "name": "China Steel Corporation",
+    "chinese_name": "中國鋼鐵股份有限公司",
+    "icon": "https://logo.clearbit.com/chinasteel.com",
+    "description": "台灣最大的鋼鐵製造商，產品應用於建築與汽車產業。",
+    "sector": "傳產製造業",
+    "industry": "鋼鐵",
+    "founded": "1971年12月3日",
+    "ipo_date": "1974-12-26",
+    "headquarters": "高雄",
+    "key_products": [
+      "鋼板",
+      "鋼筋"
+    ],
+    "key_services": [
+      "鋼鐵加工"
+    ]
+  },
+  "1326": {
+    "name": "Formosa Chemicals & Fibre Corporation",
+    "chinese_name": "台灣化學纖維股份有限公司",
+    "icon": "https://logo.clearbit.com/formosachem.com",
+    "description": "台灣主要的化工企業，產品包括化學纖維與石化原料。",
+    "sector": "傳產製造業",
+    "industry": "塑化",
+    "founded": "1965年3月5日",
+    "ipo_date": "1972-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "尼龍纖維",
+      "石化產品"
+    ],
+    "key_services": [
+      "化工原料供應"
+    ]
+  },
+  "6505": {
+    "name": "Formosa Petrochemical Corporation",
+    "chinese_name": "台塑石化股份有限公司",
+    "icon": "https://logo.clearbit.com/fpcc.com.tw",
+    "description": "台灣領先的石化企業，產品包括燃料與化工原料。",
+    "sector": "傳產製造業",
+    "industry": "石化",
+    "founded": "1992年4月6日",
+    "ipo_date": "2003-12-26",
+    "headquarters": "台北",
+    "key_products": [
+      "汽油",
+      "乙烯"
+    ],
+    "key_services": [
+      "石化原料供應"
+    ]
+  },
+  "1402": {
+    "name": "Far Eastern New Century Corporation",
+    "chinese_name": "遠東新世紀股份有限公司",
+    "icon": "https://logo.clearbit.com/fenc.com",
+    "description": "台灣多元化的傳產企業，業務包括紡織與石化。",
+    "sector": "傳產製造業",
+    "industry": "紡織",
+    "founded": "1954年10月1日",
+    "ipo_date": "1967-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "聚酯纖維",
+      "紡織品"
+    ],
+    "key_services": [
+      "紡織製造"
+    ]
+  },
+  "2105": {
+    "name": "Cheng Shin Rubber Ind. Co., Ltd.",
+    "chinese_name": "正新橡膠工業股份有限公司",
+    "icon": "https://logo.clearbit.com/chengshin.com.tw",
+    "description": "台灣最大的輪胎製造商，產品應用於汽車與自行車。",
+    "sector": "傳產製造業",
+    "industry": "輪胎",
+    "founded": "1967年1月1日",
+    "ipo_date": "1985-12-01",
+    "headquarters": "彰化",
+    "key_products": [
+      "汽車輪胎",
+      "自行車輪胎"
+    ],
+    "key_services": [
+      "輪胎製造"
+    ]
+  },
+  "9910": {
+    "name": "Feng Tay Enterprises Co., Ltd.",
+    "chinese_name": "豐泰企業股份有限公司",
+    "icon": "https://logo.clearbit.com/fengtay.com",
+    "description": "台灣主要的製鞋企業，為國際品牌代工鞋類產品。",
+    "sector": "傳產製造業",
+    "industry": "製鞋",
+    "founded": "1971年5月1日",
+    "ipo_date": "1992-06-01",
+    "headquarters": "雲林",
+    "key_products": [
+      "運動鞋",
+      "休閒鞋"
+    ],
+    "key_services": [
+      "鞋類製造"
+    ]
+  },
+  "1476": {
+    "name": "Eclat Textile Co., Ltd.",
+    "chinese_name": "儒鴻企業股份有限公司",
+    "icon": "https://logo.clearbit.com/eclat.com.tw",
+    "description": "台灣領先的機能性布料與成衣製造商。",
+    "sector": "傳產製造業",
+    "industry": "紡織",
+    "founded": "1977年10月1日",
+    "ipo_date": "1999-12-01",
+    "headquarters": "新北",
+    "key_products": [
+      "機能布料",
+      "運動服"
+    ],
+    "key_services": [
+      "紡織製造"
+    ]
+  },
+  "2474": {
+    "name": "Catcher Technology Co., Ltd.",
+    "chinese_name": "可成科技股份有限公司",
+    "icon": "https://logo.clearbit.com/catcher.com.tw",
+    "description": "台灣主要的金屬機殼製造商，產品應用於電子設備。",
+    "sector": "傳產製造業",
+    "industry": "金屬加工",
+    "founded": "1984年11月23日",
+    "ipo_date": "2001-11-13",
+    "headquarters": "台南",
+    "key_products": [
+      "金屬機殼",
+      "精密零件"
+    ],
+    "key_services": [
+      "金屬加工"
+    ]
+  },
+  "1590": {
+    "name": "Airtac International Group",
+    "chinese_name": "亞德客國際集團",
+    "icon": "https://logo.clearbit.com/airtac.com",
+    "description": "台灣領先的氣動元件製造商，產品應用於自動化設備。",
+    "sector": "傳產製造業",
+    "industry": "機械",
+    "founded": "1988年9月1日",
+    "ipo_date": "2010-12-13",
+    "headquarters": "台北",
+    "key_products": [
+      "氣動元件",
+      "控制閥"
+    ],
+    "key_services": [
+      "機械製造"
+    ]
+  },
+  "2049": {
+    "name": "Hiwin Technologies Corp.",
+    "chinese_name": "上銀科技股份有限公司",
+    "icon": "https://logo.clearbit.com/hiwin.com.tw",
+    "description": "台灣領先的精密機械元件製造商，產品包括線性滑軌。",
+    "sector": "傳產製造業",
+    "industry": "機械",
+    "founded": "1989年10月1日",
+    "ipo_date": "2006-06-26",
+    "headquarters": "台中",
+    "key_products": [
+      "線性滑軌",
+      "滾珠螺桿"
+    ],
+    "key_services": [
+      "精密機械製造"
+    ]
+  },
+  "9921": {
+    "name": "Giant Manufacturing Co., Ltd.",
+    "chinese_name": "巨大機械工業股份有限公司",
+    "icon": "https://logo.clearbit.com/giant-bicycles.com",
+    "description": "台灣最大的自行車製造商，產品銷往全球。",
+    "sector": "傳產製造業",
+    "industry": "自行車",
+    "founded": "1972年10月27日",
+    "ipo_date": "1992-06-01",
+    "headquarters": "台中",
+    "key_products": [
+      "自行車",
+      "電動自行車"
+    ],
+    "key_services": [
+      "自行車製造"
+    ]
+  },
+  "9904": {
+    "name": "Pou Chen Corporation",
+    "chinese_name": "寶成工業股份有限公司",
+    "icon": "https://logo.clearbit.com/pouchen.com",
+    "description": "台灣最大的製鞋代工企業，客戶包括國際運動品牌。",
+    "sector": "傳產製造業",
+    "industry": "製鞋",
+    "founded": "1969年9月1日",
+    "ipo_date": "1990-06-01",
+    "headquarters": "台中",
+    "key_products": [
+      "運動鞋",
+      "休閒鞋"
+    ],
+    "key_services": [
+      "鞋類製造"
+    ]
+  },
+  "2207": {
+    "name": "Hotai Motor Co., Ltd.",
+    "chinese_name": "和泰汽車股份有限公司",
+    "icon": "https://logo.clearbit.com/hotaimotor.com.tw",
+    "description": "台灣最大的汽車代理商，代理Toyota與Lexus品牌。",
+    "sector": "傳產製造業",
+    "industry": "汽車",
+    "founded": "1947年9月1日",
+    "ipo_date": "1997-11-18",
+    "headquarters": "台北",
+    "key_products": [
+      "Toyota汽車",
+      "Lexus汽車"
+    ],
+    "key_services": [
+      "汽車銷售與維修"
+    ]
+  },
+  "2354": {
+    "name": "Foxconn Technology Co., Ltd.",
+    "chinese_name": "鴻準精密工業股份有限公司",
+    "icon": "https://logo.clearbit.com/foxconntechnology.com",
+    "description": "台灣主要的精密零件製造商，產品應用於電子設備。",
+    "sector": "傳產製造業",
+    "industry": "金屬加工",
+    "founded": "1990年5月1日",
+    "ipo_date": "1999-06-01",
+    "headquarters": "新北",
+    "key_products": [
+      "精密零件",
+      "連接器"
+    ],
+    "key_services": [
+      "金屬加工"
+    ]
+  },
+  "9945": {
+    "name": "Ruentex Development Co., Ltd.",
+    "chinese_name": "潤泰創新國際股份有限公司",
+    "icon": "https://logo.clearbit.com/ruentex.com.tw",
+    "description": "台灣多元化的傳產與地產企業，業務包括零售與建設。",
+    "sector": "傳產製造業",
+    "industry": "零售與地產",
+    "founded": "1975年12月1日",
+    "ipo_date": "1992-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "零售商品",
+      "建築材料"
+    ],
+    "key_services": [
+      "零售與地產開發"
+    ]
+  },
+  "3045": {
+    "name": "Taiwan Mobile Co., Ltd.",
+    "chinese_name": "台灣大哥大股份有限公司",
+    "icon": "https://logo.clearbit.com/taiwanmobile.com",
+    "description": "台灣主要的電信運營商，提供行動通訊與寬頻服務。",
+    "sector": "傳產製造業",
+    "industry": "電信",
+    "founded": "1997年2月25日",
+    "ipo_date": "2002-08-26",
+    "headquarters": "台北",
+    "key_products": [
+      "行動通訊",
+      "寬頻服務"
+    ],
+    "key_services": [
+      "電信服務"
+    ]
+  },
+  "4904": {
+    "name": "Far EasTone Telecommunications Co., Ltd.",
+    "chinese_name": "遠傳電信股份有限公司",
+    "icon": "https://logo.clearbit.com/fareastone.com.tw",
+    "description": "台灣主要的電信運營商，專注於5G與企業解決方案。",
+    "sector": "傳產製造業",
+    "industry": "電信",
+    "founded": "1997年4月11日",
+    "ipo_date": "2001-12-10",
+    "headquarters": "台北",
+    "key_products": [
+      "5G通訊",
+      "寬頻服務"
+    ],
+    "key_services": [
+      "企業通訊解決方案"
+    ]
+  },
+  "1216": {
+    "name": "Uni-President Enterprises Corp.",
+    "chinese_name": "統一企業股份有限公司",
+    "icon": "https://logo.clearbit.com/unipresident.com.tw",
+    "description": "台灣最大的食品與零售企業，產品包括飲料與便利商店。",
+    "sector": "傳產製造業",
+    "industry": "食品",
+    "founded": "1967年8月25日",
+    "ipo_date": "1987-12-01",
+    "headquarters": "台南",
+    "key_products": [
+      "統一超商",
+      "飲料"
+    ],
+    "key_services": [
+      "零售服務"
+    ]
+  },
+  "2912": {
+    "name": "President Chain Store Corporation",
+    "chinese_name": "統一超商股份有限公司",
+    "icon": "https://logo.clearbit.com/7-11.com.tw",
+    "description": "台灣最大的便利商店連鎖企業，經營7-11品牌。",
+    "sector": "傳產製造業",
+    "industry": "零售",
+    "founded": "1987年6月1日",
+    "ipo_date": "1997-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "便利商店商品",
+      "即食食品"
+    ],
+    "key_services": [
+      "零售服務"
+    ]
+  },
+  "2603": {
+    "name": "Evergreen Marine Corporation",
+    "chinese_name": "長榮海運股份有限公司",
+    "icon": "https://logo.clearbit.com/evergreen-marine.com",
+    "description": "台灣最大的海運公司，提供全球貨櫃運輸服務。",
+    "sector": "傳產製造業",
+    "industry": "海運",
+    "founded": "1968年9月1日",
+    "ipo_date": "1987-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "貨櫃運輸",
+      "物流服務"
+    ],
+    "key_services": [
+      "海運服務"
+    ]
+  },
+  "2609": {
+    "name": "Yang Ming Marine Transport Corp.",
+    "chinese_name": "陽明海運股份有限公司",
+    "icon": "https://logo.clearbit.com/yangming.com",
+    "description": "台灣主要的海運公司，提供國際貨櫃運輸服務。",
+    "sector": "傳產製造業",
+    "industry": "海運",
+    "founded": "1972年12月28日",
+    "ipo_date": "1992-06-01",
+    "headquarters": "基隆",
+    "key_products": [
+      "貨櫃運輸",
+      "物流服務"
+    ],
+    "key_services": [
+      "海運服務"
+    ]
+  },
+  "2615": {
+    "name": "Wan Hai Lines Ltd.",
+    "chinese_name": "萬海航運股份有限公司",
+    "icon": "https://logo.clearbit.com/wanhai.com",
+    "description": "台灣重要的海運公司，專注於亞洲航線貨櫃運輸。",
+    "sector": "傳產製造業",
+    "industry": "海運",
+    "founded": "1965年2月24日",
+    "ipo_date": "1991-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "貨櫃運輸",
+      "物流服務"
+    ],
+    "key_services": [
+      "海運服務"
+    ]
+  },
+  "2633": {
+    "name": "Taiwan High Speed Rail Corporation",
+    "chinese_name": "台灣高速鐵路股份有限公司",
+    "icon": "https://logo.clearbit.com/thsrc.com.tw",
+    "description": "台灣唯一的高速鐵路運營商，提供高速交通服務。",
+    "sector": "傳產製造業",
+    "industry": "交通",
+    "founded": "1998年5月11日",
+    "ipo_date": "2007-10-23",
+    "headquarters": "台北",
+    "key_products": [
+      "高速鐵路服務"
+    ],
+    "key_services": [
+      "交通運輸"
+    ]
+  },
+  "2201": {
+    "name": "Yulon Motor Co., Ltd.",
+    "chinese_name": "裕隆汽車製造股份有限公司",
+    "icon": "https://logo.clearbit.com/yulon-motor.com.tw",
+    "description": "台灣主要的汽車製造與銷售企業，經營納智捷品牌。",
+    "sector": "傳產製造業",
+    "industry": "汽車",
+    "founded": "1953年9月10日",
+    "ipo_date": "1986-06-01",
+    "headquarters": "新北",
+    "key_products": [
+      "納智捷汽車",
+      "汽車零件"
+    ],
+    "key_services": [
+      "汽車製造與銷售"
+    ]
+  },
+  "2204": {
+    "name": "China Motor Corporation",
+    "chinese_name": "中華汽車工業股份有限公司",
+    "icon": "https://logo.clearbit.com/cmc.com.tw",
+    "description": "台灣主要的汽車製造商，代理三菱汽車品牌。",
+    "sector": "傳產製造業",
+    "industry": "汽車",
+    "founded": "1969年12月1日",
+    "ipo_date": "1991-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "三菱汽車",
+      "商用車"
+    ],
+    "key_services": [
+      "汽車製造與銷售"
+    ]
+  },
+  "1536": {
+    "name": "Hota Industrial Mfg. Co., Ltd.",
+    "chinese_name": "和大工業股份有限公司",
+    "icon": "https://logo.clearbit.com/hota.com.tw",
+    "description": "台灣主要的汽車零件製造商，產品包括傳動系統。",
+    "sector": "傳產製造業",
+    "industry": "汽車零件",
+    "founded": "1968年5月1日",
+    "ipo_date": "2002-11-11",
+    "headquarters": "台中",
+    "key_products": [
+      "傳動齒輪",
+      "汽車零件"
+    ],
+    "key_services": [
+      "零件製造"
+    ]
+  },
+  "1504": {
+    "name": "TECO Electric & Machinery Co., Ltd.",
+    "chinese_name": "東元電機股份有限公司",
+    "icon": "https://logo.clearbit.com/teco.com.tw",
+    "description": "台灣老牌電機製造商，產品包括馬達與家電。",
+    "sector": "傳產製造業",
+    "industry": "電機",
+    "founded": "1956年6月1日",
+    "ipo_date": "1971-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "馬達",
+      "家電"
+    ],
+    "key_services": [
+      "電機製造"
+    ]
+  },
+
+  "2015": {
+    "name": "Feng Hsin Steel Co., Ltd.",
+    "chinese_name": "豐興鋼鐵股份有限公司",
+    "icon": "https://logo.clearbit.com/fenghsin.com.tw",
+    "description": "台灣主要的鋼鐵製造商，產品包括鋼筋與型鋼。",
+    "sector": "傳產製造業",
+    "industry": "鋼鐵",
+    "founded": "1969年5月1日",
+    "ipo_date": "1992-06-01",
+    "headquarters": "台中",
+    "key_products": [
+      "鋼筋",
+      "型鋼"
+    ],
+    "key_services": [
+      "鋼鐵加工"
+    ]
+  },
+ 
+  "1795": {
+    "name": "Lotus Pharmaceutical Co., Ltd.",
+    "chinese_name": "美時化學製藥股份有限公司",
+    "icon": "https://logo.clearbit.com/lotuspharm.com",
+    "description": "台灣領先的學名藥製造商，產品銷往國際市場。",
+    "sector": "生技醫療產業",
+    "industry": "製藥",
+    "founded": "1966年5月1日",
+    "ipo_date": "1996-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "學名藥",
+      "特殊劑型藥"
+    ],
+    "key_services": [
+      "藥品製造"
+    ]
+  },
+  "3705": {
+    "name": "YungShin Global Holding Corporation",
+    "chinese_name": "永信藥品股份有限公司",
+    "icon": "https://logo.clearbit.com/yungshingroup.com",
+    "description": "台灣老牌製藥公司，產品包括學名藥與保健品。",
+    "sector": "生技醫療產業",
+    "industry": "製藥",
+    "founded": "1952年7月1日",
+    "ipo_date": "1992-06-01",
+    "headquarters": "台中",
+    "key_products": [
+      "學名藥",
+      "保健品"
+    ],
+    "key_services": [
+      "藥品製造"
+    ]
+  },
+  
+  "1789": {
+    "name": "ScinoPharm Taiwan, Ltd.",
+    "chinese_name": "台灣神隆股份有限公司",
+    "icon": "https://logo.clearbit.com/scinopharm.com",
+    "description": "台灣領先的原料藥製造商，產品應用於學名藥。",
+    "sector": "生技醫療產業",
+    "industry": "原料藥",
+    "founded": "1997年11月1日",
+    "ipo_date": "2008-06-01",
+    "headquarters": "台南",
+    "key_products": [
+      "原料藥",
+      "學名藥原料"
+    ],
+    "key_services": [
+      "藥品製造"
+    ]
+  },
+  "6446": {
+    "name": "PharmaEssentia Corporation",
+    "chinese_name": "藥華醫藥股份有限公司",
+    "icon": "https://logo.clearbit.com/pharmaessentia.com",
+    "description": "台灣專注於血液疾病新藥研發的生技公司。",
+    "sector": "生技醫療產業",
+    "industry": "新藥研發",
+    "founded": "2003年10月1日",
+    "ipo_date": "2016-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "血液疾病新藥",
+      "生物製劑"
+    ],
+    "key_services": [
+      "藥物研發"
+    ]
+  },
+  "4142": {
+    "name": "Adimmune Corporation",
+    "chinese_name": "國光生物科技股份有限公司",
+    "icon": "https://logo.clearbit.com/adimmune.com.tw",
+    "description": "台灣領先的疫苗製造商，產品包括流感疫苗。",
+    "sector": "生技醫療產業",
+    "industry": "疫苗",
+    "founded": "1965年8月1日",
+    "ipo_date": "2007-12-01",
+    "headquarters": "台中",
+    "key_products": [
+      "流感疫苗",
+      "生物製劑"
+    ],
+    "key_services": [
+      "疫苗製造"
+    ]
+  },
+  "1783": {
+    "name": "Formosa Biomedical Technology Corp.",
+    "chinese_name": "台塑生醫科技股份有限公司",
+    "icon": "https://logo.clearbit.com/formosabio.com",
+    "description": "台灣專注於保健品與醫療產品的生技公司。",
+    "sector": "生技醫療產業",
+    "industry": "保健品",
+    "founded": "2004年6月1日",
+    "ipo_date": "2012-06-01",
+    "headquarters": "台北",
+    "key_products": [
+      "保健食品",
+      "醫療用品"
+    ],
+    "key_services": [
+      "生技製造"
+    ]
+  },
+  "0050": {
+    "name": "Yuanta Taiwan Top 50 ETF",
+    "chinese_name": "元大台灣50ETF",
+    "icon": "https://logo.clearbit.com/yuanta.com",
+    "description": "追蹤台灣證券交易所台灣50指數，涵蓋台灣市值最大的前50家公司。",
+    "sector": "ETF",
+    "industry": "大型股ETF",
+    "founded": "2003-06-30",
+    "ipo_date": "2003-06-30",
+    "headquarters": "Taipei",
+    "key_products": ["追蹤台灣50指數"],
+    "key_services": ["投資組合管理"],
+    "asset_size_billion_twd": 4869.81
+  },
+  "00878": {
+    "name": "Cathay Sustainability High Dividend ETF",
+    "chinese_name": "國泰永續高股息ETF",
+    "icon": "https://logo.clearbit.com/cathayholdings.com",
+    "description": "結合ESG永續標準與高股息股票，追求永續收益。",
+    "sector": "ETF",
+    "industry": "高股息ETF",
+    "founded": "2020-08-11",
+    "ipo_date": "2020-08-11",
+    "headquarters": "Taipei",
+    "key_products": ["永續高股息投資"],
+    "key_services": ["投資組合管理"],
+    "asset_size_billion_twd": 4190.08
+  },
+  "0056": {
+    "name": "Yuanta High Dividend ETF",
+    "chinese_name": "元大高股息ETF",
+    "icon": "https://logo.clearbit.com/yuanta.com",
+    "description": "追蹤台灣高股息指數，專注於高配息股票。",
+    "sector": "ETF",
+    "industry": "高股息ETF",
+    "founded": "2007-08-28",
+    "ipo_date": "2007-08-28",
+    "headquarters": "Taipei",
+    "key_products": ["追蹤高股息指數"],
+    "key_services": ["投資組合管理"],
+    "asset_size_billion_twd": 4104.33
+  },
+  "00919": {
+    "name": "Qunyi Taiwan Select High Dividend ETF",
+    "chinese_name": "群益台灣精選高息ETF",
+    "icon": "https://logo.clearbit.com/qunyi.com.tw",
+    "description": "精選台灣高股息股票，提供穩定的現金流。",
+    "sector": "ETF",
+    "industry": "高股息ETF",
+    "founded": "2021-10-19",
+    "ipo_date": "2021-10-19",
+    "headquarters": "Taipei",
+    "key_products": ["高股息股票投資"],
+    "key_services": ["投資組合管理"],
+    "asset_size_billion_twd": 3483.28
+  },
+  
+  "006208": {
+    "name": "Fubon Taiwan Top 50 ETF",
+    "chinese_name": "富邦台50ETF",
+    "icon": "https://logo.clearbit.com/fubon.com",
+    "description": "追蹤台灣50指數，涵蓋主要的大型股。",
+    "sector": "ETF",
+    "industry": "大型股ETF",
+    "founded": "2017-06-20",
+    "ipo_date": "2017-06-20",
+    "headquarters": "Taipei",
+    "key_products": ["追蹤台灣50指數"],
+    "key_services": ["投資組合管理"],
+    "asset_size_billion_twd": 2087.71
+  },
+  "00929": {
+    "name": "Fuh Hwa Taiwan Tech Dividend ETF",
+    "chinese_name": "復華台灣科技優息ETF",
+    "icon": "https://logo.clearbit.com/fuhwa.com.tw",
+    "description": "專注於台灣高股息科技股。",
+    "sector": "ETF",
+    "industry": "科技ETF",
+    "founded": "2022-03-22",
+    "ipo_date": "2022-03-22",
+    "headquarters": "Taipei",
+    "key_products": ["科技股股息投資"],
+    "key_services": ["投資組合管理"],
+    "asset_size_billion_twd": 1892.49
+  },
+ 
+ 
+  "00940": {
+    "name": "Yuanta Taiwan Value High Dividend ETF",
+    "chinese_name": "元大台灣價值高息ETF",
+    "icon": "https://logo.clearbit.com/yuanta.com",
+    "description": "追蹤台灣價值高息指數，兼顧價值與收益。",
+    "sector": "ETF",
+    "industry": "高股息ETF",
+    "founded": "2024-04-01",
+    "ipo_date": "2024-04-01",
+    "headquarters": "Taipei",
+    "key_products": ["追蹤價值高息指數"],
+    "key_services": ["投資組合管理"],
+    "asset_size_billion_twd": 1381.60
+  },
+  "00713": {
+    "name": "Yuanta Taiwan High Dividend Low Volatility ETF",
+    "chinese_name": "元大台灣高息低波ETF",
+    "icon": "https://logo.clearbit.com/yuanta.com",
+    "description": "追蹤高股息、低波動的股票，追求平衡的報酬。",
+    "sector": "ETF",
+    "industry": "高股息ETF",
+    "founded": "2016-11-01",
+    "ipo_date": "2016-11-01",
+    "headquarters": "Taipei",
+    "key_products": ["追蹤高股息低波動指數"],
+    "key_services": ["投資組合管理"],
+    "asset_size_billion_twd": 1373.35
+  },
+ 
+  "00918": {
+    "name": "Dahua High Dividend Yield 30 ETF",
+    "chinese_name": "大華優利高填息30ETF",
+    "icon": "https://logo.clearbit.com/dahuasecurities.com.tw",
+    "description": "專注於台灣高股息與高殖利率的股票。",
+    "sector": "ETF",
+    "industry": "高股息ETF",
+    "founded": "2021-11-23",
+    "ipo_date": "2021-11-23",
+    "headquarters": "Taipei",
+    "key_products": ["高股息殖利率投資"],
+    "key_services": ["投資組合管理"],
+    "asset_size_billion_twd": 778.97
+  },
+  
+  "00881": {
+    "name": "Cathay Taiwan 5G+ ETF",
+    "chinese_name": "國泰台灣5G+ETF",
+    "icon": "https://logo.clearbit.com/cathayholdings.com",
+    "description": "追蹤台灣5G相關產業的成長機會。",
+    "sector": "ETF",
+    "industry": "科技ETF",
+    "founded": "2020-12-08",
+    "ipo_date": "2020-12-08",
+    "headquarters": "Taipei",
+    "key_products": ["追蹤5G指數"],
+    "key_services": ["投資組合管理"],
+    "asset_size_billion_twd": 574.24
+  },
+  
+  "00662": {
+    "name": "Fubon NASDAQ-100 ETF",
+    "chinese_name": "富邦NASDAQ-100ETF",
+    "icon": "https://logo.clearbit.com/fubon.com",
+    "description": "追蹤NASDAQ-100指數，專注於美國科技巨頭。",
+    "sector": "ETF",
+    "industry": "科技ETF",
+    "founded": "2017-12-12",
+    "ipo_date": "2017-12-12",
+    "headquarters": "Taipei",
+    "key_products": ["追蹤NASDAQ-100指數"],
+    "key_services": ["投資組合管理"],
+    "asset_size_billion_twd": 529.02
+  },
+  "00757": {
+    "name": "Uni FANG+ ETF",
+    "chinese_name": "統一FANG+ETF",
+    "icon": "https://logo.clearbit.com/uni-president.com",
+    "description": "追蹤NYSE FANG+指數，目標鎖定領先的科技公司。",
+    "sector": "ETF",
+    "industry": "科技ETF",
+    "founded": "2018-03-20",
+    "ipo_date": "2018-03-20",
+    "headquarters": "Taipei",
+    "key_products": ["追蹤NYSE FANG+指數"],
+    "key_services": ["投資組合管理"],
+    "asset_size_billion_twd": 508.21
+  }
 }

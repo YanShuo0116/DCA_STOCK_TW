@@ -717,59 +717,34 @@ h1 {
 }
 
 .company-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    animation: fadeIn 0.8s ease-out;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 20px;
 }
 
-.detail-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.company-details p {
+    margin: 10px 0;
+    line-height: 1.6;
 }
 
-.detail-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.company-details strong {
+    color: #2c3e50;
 }
 
-.detail-item .label {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+.yahoo-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #0066cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
-.detail-item .value {
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.company-products {
-    margin-top: 2rem;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-}
-
-.company-products h4 {
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-.company-products p {
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+.yahoo-link:hover {
+    background-color: #0052a3;
 }
 
 .features-list {
@@ -920,4 +895,193 @@ h1 {
 
 #performanceChart .highcharts-axis-line {
     stroke: rgba(255, 255, 255, 0.3);
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 0.3rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    height: 40px;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    padding: 0.2rem 0.6rem;
+    margin: 0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+    background: none;
+}
+
+.navbar-toggler {
+    padding: 0.2rem;
+    border: none;
+}
+
+.navbar-toggler-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.3rem 0;
+        height: auto;
+    }
+
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.5rem;
+        border-radius: 6px;
+        margin-top: 0.3rem;
+    }
+
+    .navbar-nav {
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        padding: 0.3rem 0.5rem;
+        text-align: center;
+    }
+}
+
+.footer {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+.stock-request-form {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.stock-request-form .input-group {
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.stock-request-form .form-control {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.stock-request-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.stock-request-form .form-control:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.stock-request-form .btn-accent {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.stock-request-form .btn-accent:hover {
+    background: #27ae60;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .stock-request-form {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    .stock-request-form .input-group {
+        width: 100%;
+    }
+}
+
+/* 產業篩選按鈕 */
+.industry-filters {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.industry-btn {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.industry-btn:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+}
+
+.industry-btn.active {
+    background-color: #3498db;
+}
+
+/* 價格變動顏色 */
+.price-up {
+    color: #ff3b30 !important;
+}
+
+.price-down {
+    color: #4cd964 !important;
+}
+
+/* 績效指標顏色 */
+#totalProfitLoss.price-up,
+#totalReturn.price-up,
+#annualReturn.price-up {
+    color: #ff3b30 !important;
+}
+
+#totalProfitLoss.price-down,
+#totalReturn.price-down,
+#annualReturn.price-down {
+    color: #4cd964 !important;
 }

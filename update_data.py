@@ -25,8 +25,11 @@ def fetch_stock_data():
         try:
             print(f"正在獲取 {symbol} 的數據...")
             
+            # 為台股添加.TW後綴
+            ticker_symbol = f"{symbol}.TW"
+            
             # 獲取股票數據
-            stock = yf.Ticker(symbol)
+            stock = yf.Ticker(ticker_symbol)
             
             # 從上市日期開始獲取數據
             ipo_date = company.get('ipo_date')
@@ -41,7 +44,7 @@ def fetch_stock_data():
             
             # 將日期轉換為 ISO 格式字串
             formatted_prices = {
-                date.strftime('%Y-%m-%d'): price
+                date.strftime('%Y-%m-%d'): round(float(price), 2)  # 四捨五入到小數點後兩位
                 for date, price in prices.items()
             }
             

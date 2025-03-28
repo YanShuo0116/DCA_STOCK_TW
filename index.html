@@ -3,45 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHUO美股定期定額投資回測</title>
+    <title>SHUO台股定期定額投資回測</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://yanshuo0116.github.io/DCA_STOCK/" target="_blank">美股定期定額回測</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://yanshuo0116.github.io/cion_react/" target="_blank">加密貨幣介紹</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <!-- 主頁面 -->
         <div id="mainPage">
             <header>
-                <h1>SHUO美股定期定額投資回測</h1>
-                <p class="description">這是一個幫助您分析美股定期定額投資策略的工具</p>
+                <h1>SHUO台股定期定額投資回測</h1>
+                <p class="description">這是一個幫助您分析台股定期定額投資策略的工具</p>
                 <ul class="features-list">
                     <li>
-                        
                         <div>
-                            <strong>選擇知名美股及ETF</strong>
-                            <p>提供25支優質美股和25支ETF供您選擇進行回測分析</p>
+                            <strong>選擇台灣上市公司</strong>
+                            <p>提供優質台股供您選擇進行回測分析</p>
                         </div>
                     </li>
                     <li>
-                      
                         <div>
                             <strong>自訂投資參數</strong>
-                            <p>可自由設定投資起始日期、金額和頻率，模擬真實投資情境</p>
+                            <p>可自由設定投資起始日期、金額和頻率</p>
                         </div>
                     </li>
                     <li>
-                    
                         <div>
                             <strong>詳細績效分析</strong>
-                            <p>計算投資報酬率、年化報酬等關鍵指標，並提供視覺化圖表</p>
+                            <p>計算投資報酬率、年化報酬等關鍵指標</p>
                         </div>
                     </li>
                     <li>
-                   
                         <div>
                             <strong>每日自動更新</strong>
-                            <p>數據來源為Yahoo Finance，系統每日自動更新確保資料即時性</p>
+                            <p>數據來源為Yahoo Finance，確保資料即時性</p>
                         </div>
                     </li>
                 </ul>
@@ -49,6 +65,15 @@
             
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="搜尋股票代號、名稱或產業...">
+            </div>
+            
+            <div class="industry-filters">
+                <button class="industry-btn" data-industry="科技">科技</button>
+                <button class="industry-btn" data-industry="金融">金融</button>
+                <button class="industry-btn" data-industry="半導體">半導體</button>
+                <button class="industry-btn" data-industry="電子">電子</button>
+                <button class="industry-btn" data-industry="ETF">ETF</button>
+                <button class="industry-btn" data-industry="all">顯示全部</button>
             </div>
             
             <div id="stockGrid" class="stock-grid">
@@ -61,7 +86,6 @@
             <div class="backtest-header">
                 <button class="back-button" onclick="showMainPage()">返回</button>
                 <div>
-                    <img id="selectedStockIcon" src="" alt="Stock Icon" style="width: 48px; height: 48px; border-radius: 50%;">
                     <h2 id="selectedStockName"></h2>
                 </div>
             </div>
@@ -150,7 +174,29 @@
             </div>
         </div>
     </div>
-    <small class="text-muted">數據來源：Yahoo Finance</small>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <p>作者：SHUO | Email: 11360563@me.mcu.edu.tw</p>
+                </div>
+                <div class="col-md-8">
+                    <form action="https://formspree.io/f/xqapdeok" method="POST" class="stock-request-form">
+                        <div class="input-group">
+                            <input type="text" name="stock" class="form-control" placeholder="輸入希望此網站新增的股票名稱 or BUG" required>
+                            <button type="submit" class="btn btn-accent">送出</button>
+                        </div>
+                    </form>
+                </div>
+ 
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

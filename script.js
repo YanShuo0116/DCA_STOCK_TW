@@ -7,9 +7,10 @@ let selectedStock = null;
 // 初始化
 document.addEventListener('DOMContentLoaded', async () => {
     await loadCompaniesData();
-    initializeStockCards();
+    await initializeStockCards();
     initializeDateRange();
     setupSearchFilter();
+    setupIndustryFilter();
     addSmoothScroll();
 });
 
@@ -18,6 +19,32 @@ async function loadCompaniesData() {
     try {
         const response = await fetch('companies.json');
         companiesData = await response.json();
+        
+        // 按照 JSON 順序顯示公司列表
+        const stockList = document.getElementById('stockList');
+        stockList.innerHTML = '';
+        
+        Object.entries(companiesData).forEach(([symbol, company]) => {
+            const stockItem = document.createElement('div');
+            stockItem.className = 'stock-item';
+            stockItem.onclick = () => selectStock(symbol);
+            
+            stockItem.innerHTML = `
+                <img src="icons/${symbol}.svg" onerror="this.src='default-icon.png'" alt="${company.chinese_name}">
+                <div class="stock-info">
+                    <div class="stock-name">${company.chinese_name}</div>
+                    <div class="stock-symbol">${symbol}</div>
+                </div>
+            `;
+            
+            stockList.appendChild(stockItem);
+        });
+        
+        // 預設顯示第一家公司
+        const firstSymbol = Object.keys(companiesData)[0];
+        if (firstSymbol) {
+            selectStock(firstSymbol);
+        }
     } catch (error) {
         console.error('載入公司數據時發生錯誤:', error);
     }
@@ -36,29 +63,89 @@ async function loadStockData(symbol) {
     }
 }
 
+// 設置產業篩選功能
+function setupIndustryFilter() {
+    const industryFilters = document.querySelector('.industry-filters');
+    
+    // 清空現有按鈕
+    industryFilters.innerHTML = '';
+    
+    // 從公司資料中收集所有獨特的產業
+    const industries = new Set();
+    Object.values(companiesData).forEach(company => {
+        if (company.industry) {
+            industries.add(company.industry);
+        }
+    });
+    
+    // 將產業排序並創建按鈕
+    const sortedIndustries = Array.from(industries).sort();
+    
+    // 添加"顯示全部"按鈕
+    const allButton = document.createElement('button');
+    allButton.className = 'industry-btn active';
+    allButton.dataset.industry = 'all';
+    allButton.textContent = '顯示全部';
+    industryFilters.appendChild(allButton);
+    
+    // 添加各產業按鈕
+    sortedIndustries.forEach(industry => {
+        const button = document.createElement('button');
+        button.className = 'industry-btn';
+        button.dataset.industry = industry;
+        button.textContent = industry;
+        industryFilters.appendChild(button);
+    });
+    
+    // 添加點擊事件
+    const buttons = document.querySelectorAll('.industry-btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const industry = button.dataset.industry;
+            filterByIndustry(industry);
+            
+            // 更新按鈕狀態
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
+}
+
+// 根據產業篩選股票
+function filterByIndustry(industry) {
+    const cards = document.querySelectorAll('.stock-card');
+    cards.forEach(card => {
+        const stockSymbol = card.querySelector('.stock-symbol').textContent;
+        const company = companiesData[stockSymbol];
+        
+        if (industry === 'all' || company.industry === industry) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
 // 初始化股票卡片
-function initializeStockCards() {
+async function initializeStockCards() {
     const stockGrid = document.getElementById('stockGrid');
     stockGrid.innerHTML = '';
 
+    // 直接使用 Object.entries 保持原始順序
     Object.entries(companiesData).forEach(([symbol, company]) => {
         const card = document.createElement('div');
         card.className = 'stock-card';
         card.style.cursor = 'pointer';
         
-        // 使用 addEventListener 而不是 onclick
         card.addEventListener('click', () => selectStock(symbol));
 
-        const priceChange = Math.random() * 10 - 5; // 模擬價格變動
-        const priceChangeClass = priceChange >= 0 ? 'positive' : 'negative';
-        const priceChangeText = `${priceChange >= 0 ? '+' : ''}${priceChange.toFixed(2)}%`;
+        // 移除"股份有限公司"
+        let displayName = company.chinese_name.replace(/股份有限公司$/, '');
 
         card.innerHTML = `
-            <img src="${company.icon}" alt="${company.name}" onerror="this.src='icons/default.png'">
-            <h3>${company.chinese_name}</h3>
+            <h3>${displayName}</h3>
             <p class="stock-symbol">${symbol}</p>
             <p class="stock-sector">${company.sector} | ${company.industry}</p>
-            <span class="price-change ${priceChangeClass}">${priceChangeText}</span>
         `;
 
         stockGrid.appendChild(card);
@@ -145,7 +232,7 @@ function resetResults() {
     const elements = ['totalProfitLoss', 'totalReturn', 'annualReturn'];
     elements.forEach(id => {
         const element = document.getElementById(id);
-        element.classList.remove('positive', 'negative');
+        element.classList.remove('price-up', 'price-down');
     });
 
     // 清除圖表
@@ -169,7 +256,7 @@ function resetResults() {
 }
 
 // 選擇股票
-async function selectStock(symbol) {
+function selectStock(symbol) {
     try {
         selectedStock = symbol;
         const company = companiesData[symbol];
@@ -180,18 +267,13 @@ async function selectStock(symbol) {
             return;
         }
 
-        if (!company.ipo_date) {
-            console.error('公司缺少上市日期:', symbol);
-            alert('公司資料不完整，請聯繫管理員');
-            return;
-        }
-
-        // 檢查是否有必要的資料欄位
-        const requiredFields = ['chinese_name', 'description', 'headquarters', 'ceo', 'employees', 'key_products', 'key_services'];
+        // 只檢查最基本必要的欄位
+        const requiredFields = ['chinese_name', 'description', 'sector', 'industry'];
         const missingFields = requiredFields.filter(field => !company[field]);
+        
         if (missingFields.length > 0) {
             console.error('公司資料缺少必要欄位:', symbol, missingFields);
-            alert('公司資料不完整，請聯繫管理員');
+            alert('公司資料不完整');
             return;
         }
 
@@ -226,46 +308,34 @@ async function selectStock(symbol) {
         }
 
         // 更新回測頁面的公司信息
-        const stockIcon = document.getElementById('selectedStockIcon');
         const stockName = document.getElementById('selectedStockName');
         const stockDesc = document.getElementById('selectedStockDescription');
 
-        if (!stockIcon || !stockName || !stockDesc) {
+        if (!stockName || !stockDesc) {
             console.error('找不到公司資訊顯示元素');
             alert('頁面元素缺失，請重新整理後再試');
             return;
         }
 
-        stockIcon.src = company.icon || 'icons/default.png';
-        stockIcon.onerror = () => stockIcon.src = 'icons/default.png';
-        stockName.textContent = `${company.chinese_name} (${symbol})`;
-        stockDesc.innerHTML = `
+        // 移除"股份有限公司"
+        let displayName = company.chinese_name.replace(/股份有限公司$/, '');
+        stockName.textContent = `${displayName} (${symbol})`;
+
+        // 簡化公司資訊顯示
+        let detailsHTML = `
             <p>${company.description}</p>
-            <div class="company-details">
-                <div class="detail-item">
-                    <span class="label">上市時間</span>
-                    <span class="value">${company.ipo_date}</span>
-                </div>
-                <div class="detail-item">
-                    <span class="label">總部</span>
-                    <span class="value">${company.headquarters}</span>
-                </div>
-                <div class="detail-item">
-                    <span class="label">CEO</span>
-                    <span class="value">${company.ceo}</span>
-                </div>
-                <div class="detail-item">
-                    <span class="label">員工數</span>
-                    <span class="value">${company.employees}</span>
-                </div>
-            </div>
+            <p>上市時間 ${company.ipo_date}</p>
+            <p>總部 ${company.headquarters}</p>
             <div class="company-products">
                 <h4>主要產品</h4>
-                <p>${company.key_products.join('、')}</p>
+                <p>${company.key_products ? company.key_products.join('、') : '無'}</p>
                 <h4>主要服務</h4>
-                <p>${company.key_services.join('、')}</p>
+                <p>${company.key_services ? company.key_services.join('、') : '無'}</p>
             </div>
+            <p><a href="https://tw.stock.yahoo.com/quote/${symbol}" target="_blank" class="yahoo-link">查看更多資訊</a></p>
         `;
+
+        stockDesc.innerHTML = detailsHTML;
 
         // 重置結果區域
         resetResults();
@@ -410,12 +480,19 @@ async function calculatePortfolioPerformance() {
     // 更新績效指標
     document.getElementById('totalInvestment').textContent = formatCurrency(lastResult.totalInvestment);
     document.getElementById('currentValue').textContent = formatCurrency(lastResult.currentValue);
-    document.getElementById('totalProfitLoss').textContent = formatCurrency(totalProfitLoss);
-    document.getElementById('totalProfitLoss').className = totalProfitLoss >= 0 ? 'positive' : 'negative';
-    document.getElementById('totalReturn').textContent = formatPercentage(totalReturn);
-    document.getElementById('totalReturn').className = totalReturn >= 0 ? 'positive' : 'negative';
-    document.getElementById('annualReturn').textContent = formatPercentage(annualReturn);
-    document.getElementById('annualReturn').className = annualReturn >= 0 ? 'positive' : 'negative';
+    
+    const totalProfitLossElement = document.getElementById('totalProfitLoss');
+    totalProfitLossElement.textContent = formatCurrency(totalProfitLoss);
+    totalProfitLossElement.className = totalProfitLoss >= 0 ? 'price-up' : 'price-down';
+    
+    const totalReturnElement = document.getElementById('totalReturn');
+    totalReturnElement.textContent = formatPercentage(totalReturn);
+    totalReturnElement.className = totalReturn >= 0 ? 'price-up' : 'price-down';
+    
+    const annualReturnElement = document.getElementById('annualReturn');
+    annualReturnElement.textContent = formatPercentage(annualReturn);
+    annualReturnElement.className = annualReturn >= 0 ? 'price-up' : 'price-down';
+    
     document.getElementById('totalFees').textContent = formatCurrency(lastResult.totalFees);
 
     // 更新圖表
