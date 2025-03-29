@@ -20,6 +20,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
+                    <br>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" style="cursor: default;">我的其他網頁 ⮕</a>
                     </li>
@@ -203,5 +204,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="script.js"></script>
+    <script>
+document.addEventListener("click", function(event) {
+    const navbar = document.getElementById("navbarNav");
+    const toggler = document.querySelector(".navbar-toggler");
+
+    if (navbar.classList.contains("show") && !navbar.contains(event.target) && !toggler.contains(event.target)) {
+        toggler.click();
+    }
+});
+</script>
+
 </body>
 </html> 
