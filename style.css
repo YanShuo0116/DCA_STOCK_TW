@@ -898,63 +898,80 @@ h1 {
 }
 
 .navbar {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    padding: 0.3rem 0;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    height: 40px;
+    padding: 0.5rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar .container {
+    position: relative;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.3rem;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.2rem;
+    height: 1.2rem;
 }
 
 .navbar-nav {
-    margin: 0 auto;
     gap: 1.5rem;
+    align-items: center;
 }
 
 .nav-link {
-    color: var(--text-muted);
+    color: var(--text-color) !important;
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
     transition: all 0.3s ease;
-    padding: 0.2rem 0.6rem;
-    margin: 0;
     border-radius: 4px;
     font-size: 0.9rem;
 }
 
 .nav-link:hover {
-    color: var(--accent-color);
-    background: none;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.navbar-toggler {
-    padding: 0.2rem;
-    border: none;
-}
-
-.navbar-toggler-icon {
-    width: 1.2rem;
-    height: 1.2rem;
+.nav-link.disabled {
+    opacity: 0.7;
+    pointer-events: none;
 }
 
 @media (max-width: 768px) {
     .navbar {
         padding: 0.3rem 0;
-        height: auto;
     }
 
     .navbar-collapse {
-        background: rgba(255, 255, 255, 0.05);
-        padding: 0.5rem;
+        background: rgba(44, 62, 80, 0.95);
+        backdrop-filter: blur(10px);
         border-radius: 6px;
-        margin-top: 0.3rem;
+        margin-top: 2.5rem;
+        padding: 0.5rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 1000;
     }
 
     .navbar-nav {
-        gap: 0.5rem;
+        text-align: center;
+        gap: 0.3rem;
     }
 
     .nav-link {
-        padding: 0.3rem 0.5rem;
-        text-align: center;
+        padding: 0.4rem 0.6rem;
+        display: inline-block;
     }
 }
 
