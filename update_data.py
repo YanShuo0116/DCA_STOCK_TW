@@ -36,8 +36,43 @@ def fetch_stock_data():
             if not ipo_date:
                 print(f"警告：{symbol} 缺少上市日期，跳過")
                 continue
-                
-            df = stock.history(start=ipo_date)
+            
+            # 嘗試多種日期範圍策略
+            df = None
+            strategies = [
+                # 策略1: 從上市日期開始
+                {'start': ipo_date, 'period': None},
+                # 策略2: 最近10年
+                {'start': None, 'period': '10y'},
+                # 策略3: 最近5年
+                {'start': None, 'period': '5y'},
+                # 策略4: 最近2年
+                {'start': None, 'period': '2y'},
+                # 策略5: 最近1年
+                {'start': None, 'period': '1y'}
+            ]
+            
+            for i, strategy in enumerate(strategies):
+                try:
+                    if strategy['start']:
+                        df = stock.history(start=strategy['start'])
+                    else:
+                        df = stock.history(period=strategy['period'])
+                    
+                    if not df.empty:
+                        print(f"  策略 {i+1} 成功: 獲取到 {len(df)} 筆數據")
+                        break
+                    else:
+                        print(f"  策略 {i+1} 失敗: 數據為空")
+                        
+                except Exception as strategy_error:
+                    print(f"  策略 {i+1} 失敗: {str(strategy_error)}")
+                    continue
+            
+            # 如果所有策略都失敗，跳過這支股票
+            if df is None or df.empty:
+                print(f"❌ {symbol}: 所有策略都失敗，跳過")
+                continue
             
             # 只保留收盤價
             prices = df['Close'].to_dict()
@@ -61,13 +96,13 @@ def fetch_stock_data():
             with open(file_path, 'w', encoding='utf-8') as f:
                 json.dump(stock_data, f, ensure_ascii=False, indent=2)
             
-            print(f"成功獲取並保存 {symbol} 的數據")
+            print(f"✅ {symbol}: 成功獲取並保存 {len(formatted_prices)} 筆數據")
             
             # 避免請求過於頻繁
-            time.sleep(2)
+            time.sleep(1)
             
         except Exception as e:
-            print(f"獲取 {symbol} 的數據時發生錯誤: {str(e)}")
+            print(f"❌ {symbol}: 獲取數據時發生錯誤: {str(e)}")
 
 def main():
     try:
