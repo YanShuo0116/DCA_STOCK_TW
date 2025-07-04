@@ -149,8 +149,8 @@ def fetch_stock_data_new():
             ipo_year = int(ipo_date.split('-')[0])
             current_year = datetime.now().year
             
-            # 從上市年份開始，逐月獲取數據
-            for year in range(max(ipo_year, current_year - 5), current_year + 1):  # 最多獲取5年數據
+            # 從上市年份開始，逐月獲取數據（移除5年限制）
+            for year in range(ipo_year, current_year + 1):  # 獲取完整歷史數據
                 for month in range(1, 13):
                     if year == current_year and month > datetime.now().month:
                         break

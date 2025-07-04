@@ -1,0 +1,37 @@
+name: Daily Stock Data Update
+
+on:
+  schedule:
+    # 每天台北時間 18:00 (UTC 10:00) 執行
+    - cron: '0 10 * * *'
+  workflow_dispatch: # 允許手動觸發
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run daily update
+      run: |
+        python daily_update.py
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add stock_data/
+        git diff --staged --quiet || git commit -m "Daily stock data update - $(date +'%Y-%m-%d %H:%M:%S')"
+        git push
