@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-新的股票數據更新腳本 - 使用多種穩定數據源
-不依賴 yfinance，使用台灣證券交易所官方 API 和其他穩定源
+股票數據更新腳本 - 使用 Yahoo Finance 只更新最新數據
+只抓取最新日期的數據，添加到現有 JSON 文件中
 """
 
-import requests
-import json
+import yfinance as yf
 import pandas as pd
+import json
 from datetime import datetime, timedelta
 import time
 import os
@@ -22,208 +22,155 @@ def load_companies():
         companies = json.load(f)
     return companies
 
-def get_twse_data(stock_id, year_month):
+def load_existing_data(symbol):
     """
-    從台灣證券交易所獲取股票數據
-    API: https://www.twse.com.tw/exchangeReport/STOCK_DAY
+    載入現有的股票數據
     """
-    url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY"
-    params = {
-        'response': 'json',
-        'date': year_month,  # 格式: YYYYMM01
-        'stockNo': stock_id
-    }
+    file_path = f'stock_data/{symbol}.json'
     
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    }
+    if not os.path.exists(file_path):
+        return None
     
     try:
-        response = requests.get(url, params=params, headers=headers, timeout=15)
-        
-        if response.status_code == 200:
-            data = response.json()
-            
-            if 'data' in data and data['data']:
-                # 解析數據格式
-                # data['data'] 是一個列表，每個元素包含 [日期, 成交股數, 成交金額, 開盤價, 最高價, 最低價, 收盤價, 漲跌價差, 成交筆數]
-                prices = {}
-                
-                for row in data['data']:
-                    if len(row) >= 7:
-                        date_str = row[0].replace('/', '-')  # 轉換日期格式
-                        # 處理民國年轉西元年
-                        if len(date_str.split('-')[0]) == 3:  # 民國年
-                            year_parts = date_str.split('-')
-                            year_parts[0] = str(int(year_parts[0]) + 1911)
-                            date_str = '-'.join(year_parts)
-                        
-                        close_price = row[6].replace(',', '')  # 移除千分位逗號
-                        
-                        try:
-                            prices[date_str] = round(float(close_price), 2)
-                        except ValueError:
-                            continue  # 跳過無效數據
-                
-                return prices
-            else:
-                print(f"  TWSE API 無數據: {data.get('stat', 'Unknown')}")
-                return {}
-        else:
-            print(f"  TWSE API 請求失敗: {response.status_code}")
-            return {}
-            
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
     except Exception as e:
-        print(f"  TWSE API 錯誤: {e}")
-        return {}
+        print(f"  ⚠️ 讀取現有數據失敗: {e}")
+        return None
 
-def get_yahoo_data(symbol):
+def get_latest_yahoo_data(symbol, days_back=7):
     """
-    從 Yahoo Finance 獲取股票數據（備用方案）
+    使用 Yahoo Finance 獲取最近幾天的股票數據
     """
     try:
-        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}.TW"
+        ticker_symbol = f"{symbol}.TW"
+        stock = yf.Ticker(ticker_symbol)
         
-        # 獲取最近2年的數據
-        end_time = int(datetime.now().timestamp())
-        start_time = int((datetime.now() - timedelta(days=730)).timestamp())
+        # 獲取最近幾天的數據
+        start_date = (datetime.now() - timedelta(days=days_back)).strftime('%Y-%m-%d')
+        df = stock.history(start=start_date)
         
-        params = {
-            'period1': start_time,
-            'period2': end_time,
-            'interval': '1d'
-        }
-        
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        }
-        
-        response = requests.get(url, params=params, headers=headers, timeout=15)
-        
-        if response.status_code == 200:
-            data = response.json()
-            
-            if 'chart' in data and data['chart']['result']:
-                result = data['chart']['result'][0]
-                timestamps = result['timestamp']
-                closes = result['indicators']['quote'][0]['close']
-                
-                prices = {}
-                for i, timestamp in enumerate(timestamps):
-                    if closes[i] is not None:
-                        date_str = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d')
-                        prices[date_str] = round(float(closes[i]), 2)
-                
-                return prices
-            else:
-                return {}
-        else:
+        if df.empty:
             return {}
-            
+        
+        # 轉換為價格字典
+        prices = {}
+        for date, row in df.iterrows():
+            if pd.notna(row['Close']):
+                date_str = date.strftime('%Y-%m-%d')
+                prices[date_str] = round(float(row['Close']), 2)
+        
+        return prices
+        
     except Exception as e:
-        print(f"  Yahoo API 錯誤: {e}")
+        print(f"  ❌ Yahoo Finance 錯誤: {e}")
         return {}
 
-def fetch_stock_data_new():
+def update_stock_data_incremental():
     """
-    使用新的數據源獲取股票數據
+    增量更新股票數據 - 只獲取最新數據並添加到現有 JSON
     """
     ensure_data_directory()
     companies = load_companies()
     
     success_count = 0
     total_count = len(companies)
+    total_new_records = 0
+    
+    print(f"=== 增量更新股票數據 ===")
+    print(f"使用 Yahoo Finance 只獲取最新數據")
+    print(f"股票數量: {total_count}")
+    print()
     
     for i, (symbol, company) in enumerate(companies.items(), 1):
-        print(f"[{i}/{total_count}] 正在獲取 {symbol} ({company.get('chinese_name', '')}) 的數據...")
+        print(f"[{i}/{total_count}] 更新 {symbol} ({company.get('chinese_name', '')})")
         
-        ipo_date = company.get('ipo_date')
-        if not ipo_date:
-            print(f"  ❌ 缺少上市日期，跳過")
+        # 載入現有數據
+        existing_data = load_existing_data(symbol)
+        
+        if existing_data is None:
+            print(f"  ⚠️ 無現有數據，請先執行初始化")
             continue
         
-        all_prices = {}
+        # 獲取最新數據（最近7天）
+        new_prices = get_latest_yahoo_data(symbol, days_back=7)
         
-        # 策略1: 使用 TWSE API 獲取歷史數據
-        try:
-            ipo_year = int(ipo_date.split('-')[0])
-            current_year = datetime.now().year
-            
-            # 從上市年份開始，逐月獲取數據（移除5年限制）
-            for year in range(ipo_year, current_year + 1):  # 獲取完整歷史數據
-                for month in range(1, 13):
-                    if year == current_year and month > datetime.now().month:
-                        break
-                        
-                    year_month = f"{year}{month:02d}01"
-                    monthly_prices = get_twse_data(symbol, year_month)
-                    
-                    if monthly_prices:
-                        all_prices.update(monthly_prices)
-                        print(f"  ✅ {year}-{month:02d}: {len(monthly_prices)} 筆數據")
-                    
-                    time.sleep(1)  # 避免請求過於頻繁
-                    
-                    # 如果已經有足夠數據，可以提早結束
-                    if len(all_prices) > 1000:
-                        break
-                
-                if len(all_prices) > 1000:
-                    break
-                    
-        except Exception as e:
-            print(f"  ⚠️ TWSE 獲取失敗: {e}")
-        
-        # 策略2: 如果 TWSE 數據不足，使用 Yahoo 作為備用
-        if len(all_prices) < 50:
-            print(f"  🔄 TWSE 數據不足 ({len(all_prices)} 筆)，嘗試 Yahoo API...")
-            yahoo_prices = get_yahoo_data(symbol)
-            
-            if yahoo_prices:
-                all_prices.update(yahoo_prices)
-                print(f"  ✅ Yahoo: 新增 {len(yahoo_prices)} 筆數據")
-        
-        # 如果還是沒有數據，跳過
-        if not all_prices:
-            print(f"  ❌ 所有數據源都失敗，跳過")
+        if not new_prices:
+            print(f"  ℹ️ 無新數據")
             continue
         
-        # 排序並保存數據
-        sorted_prices = dict(sorted(all_prices.items()))
+        # 合併新舊數據
+        existing_prices = existing_data.get('prices', {})
+        new_count = 0
         
-        stock_data = {
-            'symbol': symbol,
-            'ipo_date': ipo_date,
+        for date, price in new_prices.items():
+            if date not in existing_prices:
+                existing_prices[date] = price
+                new_count += 1
+            else:
+                # 更新現有日期的價格（可能有修正）
+                if existing_prices[date] != price:
+                    existing_prices[date] = price
+        
+        if new_count == 0:
+            print(f"  ✅ 數據已是最新")
+            success_count += 1
+            continue
+        
+        # 排序價格數據
+        sorted_prices = dict(sorted(existing_prices.items()))
+        
+        # 更新數據結構
+        updated_data = existing_data.copy()
+        updated_data.update({
             'last_updated': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'total_records': len(sorted_prices),
             'prices': sorted_prices
-        }
+        })
         
-        # 保存到文件
+        # 更新日期範圍
+        if sorted_prices:
+            updated_data['date_range'] = {
+                'start': min(sorted_prices.keys()),
+                'end': max(sorted_prices.keys())
+            }
+        
+        # 保存更新後的數據
         file_path = f'stock_data/{symbol}.json'
         try:
             with open(file_path, 'w', encoding='utf-8') as f:
-                json.dump(stock_data, f, ensure_ascii=False, indent=2)
+                json.dump(updated_data, f, ensure_ascii=False, indent=2)
             
-            print(f"  ✅ 成功保存 {len(sorted_prices)} 筆數據")
+            print(f"  ✅ 新增 {new_count} 筆數據")
+            total_new_records += new_count
             success_count += 1
             
         except Exception as e:
             print(f"  ❌ 保存失敗: {e}")
         
         # 避免請求過於頻繁
-        time.sleep(2)
+        time.sleep(1)
     
     print(f"\n=== 更新完成 ===")
-    print(f"成功: {success_count}/{total_count} 個股票")
+    print(f"處理股票: {success_count}/{total_count}")
+    print(f"新增數據: {total_new_records} 筆")
+    
+    return success_count, total_count, total_new_records
 
 def main():
     try:
-        print("=== 使用新數據源更新股票數據 ===")
-        print("數據源: 台灣證券交易所 API + Yahoo Finance 備用")
+        success, total, new_records = update_stock_data_incremental()
         
-        fetch_stock_data_new()
-        print("數據更新完成")
-        
+        if success == total:
+            print("🎉 所有股票數據更新成功！")
+        else:
+            print(f"⚠️ 部分股票更新失敗，成功率: {success/total*100:.1f}%")
+            
+        if new_records > 0:
+            print(f"📈 總共新增了 {new_records} 筆最新數據")
+        else:
+            print("📊 所有數據都已是最新狀態")
+            
     except Exception as e:
         print(f"更新數據時發生錯誤: {str(e)}")
 
